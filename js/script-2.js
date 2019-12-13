@@ -22,15 +22,12 @@ function getUserData() {
   const gender = confirm('Ваш пол-мужской?');
   // eslint-disable-next-line no-restricted-globals,no-alert
   const isRetired = confirm('Вы на пенсии?');
-  // eslint-disable-next-line no-alert,no-useless-concat
-  alert(`Ваша ФИО: ${lastName} ${firstName} ${middleName};` + ' ' + 'Ваш'
-      // eslint-disable-next-line no-useless-concat
-      + ' возраст:' + ` ${age};` + ' ' + 'Ваш возраст в днях: ' + `${age * 365}` + ';' + ' ' + 'Через 5 лет Вам будет: ' + `${+(age) + 5}` + ';' + ' ' + 'Ваш'
-      // eslint-disable-next-line no-useless-concat
-      + ' пол:' + ` ${gender};` + ' ' + 'Вы'
+  // eslint-disable-next-line no-alert
+  alert(`Ваша ФИО: ${lastName} ${firstName} ${middleName}; + ' ' + 'Ваш'
+      + ' возраст:' + ${age}; + ' ' + 'Ваш возраст в днях: ' + ${age * 365} + ';' + ' ' + 'Через 5 лет Вам будет: ' + ${+(age) + 5} + ';' + ' ' + 'Ваш'
+      + ' пол:' + ${gender}; + ' ' + 'Вы'
       + ' на'
-      // eslint-disable-next-line no-useless-concat
-      + ' пенсии:' + ` ${isRetired}.`);
+      + ' пенсии:' + ${isRetired}.`);
 }
 
 getUserData();
