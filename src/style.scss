@@ -1,0 +1,43 @@
+@import "variables", "mixins";
+
+body {
+  font-family: $bodyFont;
+  font-size: $bodySize;
+}
+
+header {
+  background: none;
+}
+
+.nav-link {
+  font-size: $headerSize;
+}
+
+.container {
+  max-width: $containerWidth;
+  background-image: url(../images/blue-snow.png);
+}
+
+.container-header {
+  max-width: $containerWidth;
+}
+
+.container-footer {
+  max-width: $containerWidth;
+}
+
+footer li {
+  display: inline;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+ul li a :hover {
+  transform: rotate(1turn);
+  transition: 0.5s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

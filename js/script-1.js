@@ -17,14 +17,14 @@ function getNumWord(num, word1, word2, word5) {
 }
 
 
-function makeTest() {
-  // eslint-disable-next-line radix,no-alert
-  const applesCount = parseInt(prompt('Сколько яблок?'));
-  if (applesCount) {
-    // eslint-disable-next-line no-alert,no-useless-concat
-    alert(`${'У вас' + ' '}${applesCount} ${getNumWord(applesCount,
-      'яблоко', 'яблока', 'яблок')}`);
-  }
-}
-
-makeTest();
+// function makeTest() {
+// //   // eslint-disable-next-line radix,no-alert
+// //   const applesCount = parseInt(prompt('Сколько яблок?'));
+// //   if (applesCount) {
+// //     // eslint-disable-next-line no-alert,no-useless-concat
+// //     alert(`${'У вас' + ' '}${applesCount} ${getNumWord(applesCount,
+// //       'яблоко', 'яблока', 'яблок')}`);
+// //   }
+// // }
+// //
+// // makeTest();
