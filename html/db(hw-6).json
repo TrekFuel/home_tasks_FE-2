@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "title": "BMW 5 series",
+      "author": "Nick",
+      "text": "Selling BMW 530i, 2012 year, individual package, in mint condition",
+      "id": "1"
+    },
+    {
+      "title": "BMW 7 series",
+      "author": "Andrew",
+      "text": "Selling BMW M760Li, 2015 year, M-competition package, in mint condition",
+      "id": "2"
+    },
+    {
+      "title": "Mercedes-Benz E-class",
+      "author": "Tom",
+      "text": "Selling Mercedes-Benz E34 AMG, 2017 year, AMG Driver's Package, like new",
+      "id": "3"
+    },
+    {
+      "title": "Audi Q7",
+      "author": "Mike",
+      "text": "Selling Audi Q7 3.0 TDI, 2014 year, Premium plus package, in a good condition",
+      "id": "4"
+    },
+    {
+      "title": "Range Rover Evoque",
+      "author": "Brandon",
+      "text": "Selling Range Rover Evoque 2.0 Si4, SE Premium package, in mint condition",
+      "id": "5"
+    },
+    {
+      "title": "BMW 3 series",
+      "author": "Ben",
+      "text": "Selling BMW 330i, 2016 year, individual package, in mint condition",
+      "id": "6"
+    },
+    {
+      "title": "BMW 4 series",
+      "author": "Michael",
+      "text": "Selling BMW 425i, 2017 year, M-package, in mint condition",
+      "id": "7"
+    },
+    {
+      "title": "Mercedes-Benz AMG E63S",
+      "author": "Andy",
+      "text": "Selling Mercedes-Benz AMG E63S, AMG Driver's Package, 2019 year, like new",
+      "id": "8"
+    },
+    {
+      "title": "Audi RS7",
+      "author": "Alex",
+      "text": "Selling Audi RS7, 2015 year, Premium plus package, in mint condition",
+      "id": "9"
+    },
+    {
+      "title": "BMW M5",
+      "author": "John",
+      "text": "Selling BMW M5, 2018 year, M-competition package, like new",
+      "id": "10"
+    }
+  ]
+}
