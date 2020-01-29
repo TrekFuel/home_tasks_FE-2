@@ -43,6 +43,12 @@ const doneFn2 = () => {
     const result = inputWindow.value;
     renderElementAlertWindow.innerHTML = `Ваш пульс составляет: ${(result) * 4} уд/мин`;
   });
+
+  resetButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    renderElementAlertWindow.innerHTML = '';
+    inputWindow.value = '';
+  });
 };
 
 const doneFn = () => {
@@ -55,10 +61,4 @@ startButton.addEventListener('click', () => {
   // eslint-disable-next-line max-len
   const timer1 = new Timer(renderElementAlertWindow, inputsForTimer.text1, inputsForTimer.value1, doneFn);
   timer1.start();
-});
-
-resetButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  renderElementAlertWindow.innerHTML = '';
-  inputWindow.value = '';
 });
