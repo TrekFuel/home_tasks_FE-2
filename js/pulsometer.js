@@ -12,33 +12,39 @@ const inputsForTimer = {
   value2: 15,
 };
 
-function Timer(renderElement, msg, limit) {
-  const element = renderElement;
-  const text = msg;
-  let value = limit;
-  let intervalId = null;
+function Timer(renderElem, msg, limit, done) {
+  this.renderElem = renderElem;
+  this.msg = msg;
+  this.limit = limit;
+  this.done = done;
+  this.timerId;
 
   this.start = function () {
-    intervalId = setInterval(() => {
-      if (value === 0) {
-        clearInterval(intervalId);
-      }
+    this.timerId = setInterval(() => {
       alertWindow.classList.add('d-block');
-      element.innerHTML = text + value;
-      value -= 1;
+      this.renderElem.innerHTML = this.msg + this.limit;
+      this.limit -= 1;
+      if (this.limit === 0) {
+        this.pause();
+        this.done ? this.done() : null;
+      }
     }, 1000);
+  };
+
+  this.pause = function () {
+    clearTimeout(this.timerId);
   };
 
   this.showMsg = function () {
     setTimeout(() => {
-      element.innerHTML = inputsForTimer.text3;
+      this.renderElem.innerHTML = inputsForTimer.text3;
     }, ((inputsForTimer.value1) * 1000) + ((inputsForTimer.value2) * 1000) + 2000);
   };
 
   this.showResult = function () {
     const result = inputWindow.value;
     setTimeout(() => {
-      element.innerHTML = `Ваш пульс составляет: ${(result) * 4} уд/мин`;
+      this.renderElem.innerHTML = `Ваш пульс составляет: ${(result) * 4} уд/мин`;
     }, 1000);
   };
 }
@@ -47,7 +53,8 @@ function Timer(renderElement, msg, limit) {
 const timer = new Timer(renderElementAlertWindow, inputsForTimer.text1, inputsForTimer.value1);
 const timer2 = new Timer(renderElementAlertWindow, inputsForTimer.text2, inputsForTimer.value2);
 
-startButton.addEventListener('click', () => {
+startButton.addEventListener('click', (event) => {
+  event.preventDefault();
   timer.start();
 
   setTimeout(() => {
