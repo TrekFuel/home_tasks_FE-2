@@ -12,15 +12,27 @@ function eventListeners() {
 
   ui.loadPostByIdButton.addEventListener('click', (event) => {
     event.preventDefault();
-    rest.getPost(ui.inputId())
+    rest.getPost(ui.inputIdToGet())
       .then(ui.renderResponse)
-      .then(ui.clearInputId);
+      .then(ui.clearInputIdToGet);
   });
 
   ui.sendNewPostButton.addEventListener('click', (event) => {
     event.preventDefault();
     rest.sendNewPost(ui.inputData())
       .then(ui.clearInputData);
+  });
+
+  ui.deletePostByIdButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    rest.deletePost(ui.inputIdToDel())
+      .then(ui.clearInputIdToDel);
+  });
+
+  ui.editPostByIdButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    rest.editPost(ui.inputIdToEdit(), ui.inputDataToEdit())
+      .then(ui.clearInputDataToEdit);
   });
 }
 

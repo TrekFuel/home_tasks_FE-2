@@ -2,15 +2,38 @@ function Ui() {
   this.loadAllPostsButton = document.getElementById('loadAllPostsButton');
   this.loadPostByIdButton = document.getElementById('loadPostByIdButton');
   this.sendNewPostButton = document.getElementById('sendNewPostButton');
+  this.deletePostByIdButton = document.getElementById('deletePostByIdButton');
+  this.editPostByIdButton = document.getElementById('editPostByIdButton');
   this.postContainer = document.getElementById('postContainer');
   this.postTitle = document.getElementById('postTitle');
   this.postAuthor = document.getElementById('postAuthor');
   this.postText = document.getElementById('postText');
-  this.postId = document.getElementById('postId');
+  this.postTitleToEdit = document.getElementById('postTitleToEdit');
+  this.postAuthorToEdit = document.getElementById('postAuthorToEdit');
+  this.postTextToEdit = document.getElementById('postTextToEdit');
+  this.postIdToGet = document.getElementById('postIdToGet');
+  this.postIdToDel = document.getElementById('postIdToDel');
+  this.postIdToEdit = document.getElementById('postIdToEdit');
 }
 
-Ui.prototype.inputId = function () {
-  return this.postId.value;
+Ui.prototype.inputIdToGet = function () {
+  return this.postIdToGet.value;
+};
+
+Ui.prototype.inputIdToDel = function () {
+  return this.postIdToDel.value;
+};
+
+Ui.prototype.inputIdToEdit = function () {
+  return this.postIdToEdit.value;
+};
+
+Ui.prototype.clearInputIdToGet = function () {
+  this.postIdToGet.value = '';
+};
+
+Ui.prototype.clearInputIdToDel = function () {
+  this.postIdToDel.value = '';
 };
 
 Ui.prototype.inputData = function () {
@@ -21,8 +44,12 @@ Ui.prototype.inputData = function () {
   };
 };
 
-Ui.prototype.clearInputId = function () {
-  this.postId.value = '';
+Ui.prototype.inputDataToEdit = function () {
+  return {
+    title: this.postTitleToEdit.value,
+    author: this.postAuthorToEdit.value,
+    text: this.postTextToEdit.value,
+  };
 };
 
 Ui.prototype.clearInputData = function () {
@@ -31,23 +58,11 @@ Ui.prototype.clearInputData = function () {
   this.postText.value = '';
 };
 
-Ui.prototype.uiData = function () {
-  const postTitle = this.postTitle.value;
-  const postAuthor = this.postAuthor.value;
-  const postText = this.postText.value;
-
-  if (postTitle && postAuthor && postText) {
-    return new Promise((resolve) => {
-      resolve(this.returnObj(postTitle, postAuthor, postText));
-      return true;
-    });
-  } return false;
-};
-
-Ui.prototype.inputValue = function (title = '', author = '', text = '') {
-  this.postTitle.value = title;
-  this.postAuthor.value = author;
-  this.postText.value = text;
+Ui.prototype.clearInputDataToEdit = function () {
+  this.postIdToEdit.value = '';
+  this.postTitleToEdit.value = '';
+  this.postAuthorToEdit.value = '';
+  this.postTextToEdit.value = '';
 };
 
 Ui.prototype.renderResponses = function (res) {
@@ -57,12 +72,7 @@ Ui.prototype.renderResponses = function (res) {
         <h4 class="col-12 mt-5 mb-3">${post.title}</h4>
         <h5 class="mb-3 font-italic col-12">${post.author}</h5>
         <p class="col-12">${post.text}</p>
-        <button class="btn btn-primary btn-sm ml-3 mr-3" id="deleteButton">
-          Delete
-        </button>
-        <button class="btn btn-primary btn-sm" id="editButton">
-          Edit
-        </button>
+        <p class="col-12" style="border-bottom: 2px solid blue">Id - ${post.id}</p>
       </div>`;
     this.postContainer.append(div);
   }));
@@ -74,12 +84,7 @@ Ui.prototype.renderResponse = function (post) {
         <h4 class="col-12 mt-5 mb-3">${post.title}</h4>
         <h5 class="mb-3 font-italic col-12">${post.author}</h5>
         <p class="col-12">${post.text}</p>
-        <button class="btn btn-primary btn-sm ml-3 mr-3" id="deleteButton">
-          Delete
-        </button>
-        <button class="btn btn-primary btn-sm" id="editButton">
-          Edit
-        </button>
+        <p class="col-12" style="border-bottom: 2px solid blue">Id - ${post.id}</p>
       </div>`;
   this.postContainer.append(div);
 };
