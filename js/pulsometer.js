@@ -3,6 +3,7 @@ const alertWindow = document.querySelector('#alertWindow');
 const inputWindow = document.querySelector('#inputWindow');
 const startButton = document.querySelector('#startButton');
 const sendButton = document.querySelector('#sendButton');
+const resetButton = document.querySelector('#resetButton');
 
 const inputsForTimer = {
   text1: 'Измерение начнется через: ',
@@ -12,51 +13,52 @@ const inputsForTimer = {
   value2: 15,
 };
 
-function Timer(renderElement, msg, limit) {
-  const element = renderElement;
-  const text = msg;
-  let value = limit;
-  let intervalId = null;
+function Timer(renderElem, msg, limit, done) {
+  this.renderElem = renderElementAlertWindow;
+  this.msg = msg;
+  this.limit = limit;
+  this.done = done;
+  this.timerId;
 
-  this.start = function () {
-    intervalId = setInterval(() => {
-      if (value === 0) {
-        clearInterval(intervalId);
-      }
+  this.start = () => {
+    this.timerId = setInterval(() => {
       alertWindow.classList.add('d-block');
-      element.innerHTML = text + value;
-      value -= 1;
+      this.limit -= 1;
+      this.renderElem.innerHTML = this.msg + this.limit;
+      if (this.limit === 0) {
+        this.pause();
+        this.done ? this.done() : null;
+      }
     }, 1000);
   };
 
-  this.showMsg = function () {
-    setTimeout(() => {
-      element.innerHTML = inputsForTimer.text3;
-    }, ((inputsForTimer.value1) * 1000) + ((inputsForTimer.value2) * 1000) + 2000);
-  };
-
-  this.showResult = function () {
-    const result = inputWindow.value;
-    setTimeout(() => {
-      element.innerHTML = `Ваш пульс составляет: ${(result) * 4} уд/мин`;
-    }, 1000);
+  this.pause = () => {
+    clearTimeout(this.timerId);
   };
 }
 
+const doneFn2 = () => {
+  renderElementAlertWindow.innerHTML = inputsForTimer.text3;
+  sendButton.addEventListener('click', () => {
+    const result = inputWindow.value;
+    renderElementAlertWindow.innerHTML = `Ваш пульс составляет: ${(result) * 4} уд/мин`;
+  });
 
-const timer = new Timer(renderElementAlertWindow, inputsForTimer.text1, inputsForTimer.value1);
-const timer2 = new Timer(renderElementAlertWindow, inputsForTimer.text2, inputsForTimer.value2);
+  resetButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    renderElementAlertWindow.innerHTML = '';
+    inputWindow.value = '';
+  });
+};
+
+const doneFn = () => {
+  // eslint-disable-next-line max-len
+  const timer2 = new Timer(renderElementAlertWindow, inputsForTimer.text2, inputsForTimer.value2, doneFn2);
+  timer2.start();
+};
 
 startButton.addEventListener('click', () => {
-  timer.start();
-
-  setTimeout(() => {
-    timer2.start();
-  }, (inputsForTimer.value1) * 1000);
-
-  timer2.showMsg();
-});
-
-sendButton.addEventListener('click', () => {
-  timer2.showResult();
+  // eslint-disable-next-line max-len
+  const timer1 = new Timer(renderElementAlertWindow, inputsForTimer.text1, inputsForTimer.value1, doneFn);
+  timer1.start();
 });
