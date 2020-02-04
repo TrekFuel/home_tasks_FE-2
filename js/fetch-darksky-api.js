@@ -43,4 +43,3 @@ getButton.addEventListener('click', (event) => {
   event.preventDefault();
   getGrodnoForecast();
 });
-
