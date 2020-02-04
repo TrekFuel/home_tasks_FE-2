@@ -1,8 +1,4 @@
 function pseudonumbersGenerator() {
-  const NumError = function (message) {
-    this.message = message;
-  };
-
   let count = 1;
   let intervalId = null;
 
@@ -17,7 +13,7 @@ function pseudonumbersGenerator() {
 
     if (randomValue % 2 === 0) {
       console.log(`${randomValue}`);
-      throw new NumError('Ошибка: данное число четное');
+      throw new Error('Ошибка: данное число четное');
     } else if (randomValue % 2 !== 0) {
       console.log(`${randomValue} - Успешно: нечетное число`);
     }
