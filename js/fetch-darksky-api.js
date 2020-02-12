@@ -2,7 +2,12 @@ const getButton = document.getElementById('getButton');
 const renderElement = document.getElementById('container');
 
 function getGrodnoForecast() {
-  fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9ac094ddbff4dcbaf603076dfbe3874c/53.683802,23.833985,2020-02-05T15:00:00?lang=ru&units=si', {
+    const proxy = 'https://cors-anywhere.herokuapp.com';
+    const API = 'https://api.darksky.net/forecast';
+    const key = '9ac094ddbff4dcbaf603076dfbe3874c';
+    const params = '53.683802,23.833985,2020-02-05T15:00:00?lang=ru&units=si';
+
+  fetch(`${proxy}/${API}/${key}/${params}`, {
     method: 'GET',
   })
     .then((response) => response.json())
