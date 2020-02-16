@@ -148,7 +148,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([0,"vendors~analytics~main","vendors~main"]);
+/******/ 	deferredModules.push([0,"vendors~main"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -159,96 +159,10 @@
 /*!******************!*\
   !*** ../db.json ***!
   \******************/
-/*! exports provided: posts, default */
+/*! exports provided: news, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"posts\":[{\"title\":\"BMW 6 series\",\"author\":\"Jay\",\"text\":\"Selling BMW M6, 2015 year, M-competition package, in mint condition\",\"id\":1},{\"title\":\"BMW 7 series\",\"author\":\"Andrew\",\"text\":\"Selling BMW M760Li, 2015 year, M-competition package, in mint condition\",\"id\":2},{\"title\":\"Mercedes-Benz E-class\",\"author\":\"Tom\",\"text\":\"Selling Mercedes-Benz E63 AMG, 2017 year, AMG Driver's Package, like new\",\"id\":3},{\"title\":\"Audi Q7\",\"author\":\"Mike\",\"text\":\"Selling Audi Q7 3.0 TDI, 2014 year, Premium plus package, in a good condition\",\"id\":4},{\"title\":\"Range Rover Evoque\",\"author\":\"Brandon\",\"text\":\"Selling Range Rover Evoque 2.0 Si4, SE Premium package, in mint condition\",\"id\":5},{\"title\":\"BMW 3 series\",\"author\":\"Ben\",\"text\":\"Selling BMW 330i, 2016 year, individual package, in mint condition\",\"id\":6},{\"title\":\"BMW 4 series\",\"author\":\"Michael\",\"text\":\"Selling BMW 425i, 2017 year, M-package, in mint condition\",\"id\":7},{\"title\":\"Mercedes-Benz AMG E63S\",\"author\":\"Andy\",\"text\":\"Selling Mercedes-Benz AMG E63S, AMG Driver's Package, 2019 year, like new\",\"id\":8},{\"title\":\"Audi RS7\",\"author\":\"Alex\",\"text\":\"Selling Audi RS7, 2015 year, Premium plus package, in mint condition\",\"id\":9},{\"title\":\"BMW M5\",\"author\":\"John\",\"text\":\"Selling BMW M5, 2018 year, M-competition package, like new\",\"id\":10}]}");
-
-/***/ }),
-
-/***/ "./assets/data.csv":
-/*!*************************!*\
-  !*** ./assets/data.csv ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = [["Transaction_date","Product","Price","Payment_Type","Name","City","State","Country","Account_Created","Last_Login","Latitude","Longitude"],["1/2/09 6:17","Product1","1200","Mastercard","carolina","Basildon","England","United Kingdom","1/2/09 6:00","1/2/09 6:08","51.5","-1.1166667"],["1/2/09 4:53","Product1","1200","Visa","Betina","Parkville                   ","MO","United States","1/2/09 4:42","1/2/09 7:49","39.195","-94.68194"],["1/2/09 13:08","Product1","1200","Mastercard","Federica e Andrea","Astoria                     ","OR","United States","1/1/09 16:21","1/3/09 12:32","46.18806","-123.83"],["1/3/09 14:44","Product1","1200","Visa","Gouya","Echuca","Victoria","Australia","9/25/05 21:13","1/3/09 14:22","-36.1333333","144.75"],["1/4/09 12:56","Product2","3600","Visa","Gerd W ","Cahaba Heights              ","AL","United States","11/15/08 15:47","1/4/09 12:45","33.52056","-86.8025"],["1/4/09 13:19","Product1","1200","Visa","LAURENCE","Mickleton                   ","NJ","United States","9/24/08 15:19","1/4/09 13:04","39.79","-75.23806"],["1/4/09 20:11","Product1","1200","Mastercard","Fleur","Peoria                      ","IL","United States","1/3/09 9:38","1/4/09 19:45","40.69361","-89.58889"],["1/2/09 20:09","Product1","1200","Mastercard","adam","Martin                      ","TN","United States","1/2/09 17:43","1/4/09 20:01","36.34333","-88.85028"],["1/4/09 13:17","Product1","1200","Mastercard","Renee Elisabeth","Tel Aviv","Tel Aviv","Israel","1/4/09 13:03","1/4/09 22:10","32.0666667","34.7666667"],["1/4/09 14:11","Product1","1200","Visa","Aidan","Chatou","Ile-de-France","France","6/3/08 4:22","1/5/09 1:17","48.8833333","2.15"],["1/5/09 2:42","Product1","1200","Diners","Stacy","New York                    ","NY","United States","1/5/09 2:23","1/5/09 4:59","40.71417","-74.00639"],["1/5/09 5:39","Product1","1200","Amex","Heidi","Eindhoven","Noord-Brabant","Netherlands","1/5/09 4:55","1/5/09 8:15","51.45","5.4666667"],["1/2/09 9:16","Product1","1200","Mastercard","Sean ","Shavano Park                ","TX","United States","1/2/09 8:32","1/5/09 9:05","29.42389","-98.49333"],["1/5/09 10:08","Product1","1200","Visa","Georgia","Eagle                       ","ID","United States","11/11/08 15:53","1/5/09 10:05","43.69556","-116.35306"],["1/2/09 14:18","Product1","1200","Visa","Richard","Riverside                   ","NJ","United States","12/9/08 12:07","1/5/09 11:01","40.03222","-74.95778"],["1/4/09 1:05","Product1","1200","Diners","Leanne","Julianstown","Meath","Ireland","1/4/09 0:00","1/5/09 13:36","53.6772222","-6.3191667"],["1/5/09 11:37","Product1","1200","Visa","Janet","Ottawa","Ontario","Canada","1/5/09 9:35","1/5/09 19:24","45.4166667","-75.7"],["1/6/09 5:02","Product1","1200","Diners","barbara","Hyderabad","Andhra Pradesh","India","1/6/09 2:41","1/6/09 7:52","17.3833333","78.4666667"],["1/6/09 7:45","Product2","3600","Visa","Sabine","London","England","United Kingdom","1/6/09 7:00","1/6/09 9:17","51.52721","0.14559"],["1/2/09 7:35","Product1","1200","Diners","Hani","Salt Lake City              ","UT","United States","12/30/08 5:44","1/6/09 10:52","40.76083","-111.89028"],["1/6/09 12:56","Product1","1200","Visa","Jeremy","Manchester","England","United Kingdom","1/6/09 10:58","1/6/09 13:31","53.5","-2.2166667"],["1/1/09 11:05","Product1","1200","Diners","Janis","Ballynora","Cork","Ireland","12/10/07 12:37","1/7/09 1:52","51.8630556","-8.58"],["1/5/09 4:10","Product1","1200","Mastercard","Nicola","Roodepoort","Gauteng","South Africa","1/5/09 2:33","1/7/09 5:13","-26.1666667","27.8666667"],["1/6/09 7:18","Product1","1200","Visa","asuman","Chula Vista                 ","CA","United States","1/6/09 7:07","1/7/09 7:08","32.64","-117.08333"],["1/2/09 1:11","Product1","1200","Mastercard","Lena","Kuopio","Ita-Suomen Laani","Finland","12/31/08 2:48","1/7/09 10:20","62.9","27.6833333"],["1/1/09 2:24","Product1","1200","Visa","Lisa","Sugar Land                  ","TX","United States","1/1/09 1:56","1/7/09 10:52","29.61944","-95.63472"],["1/7/09 8:08","Product1","1200","Diners","Bryan Kerrene","New York                    ","NY","United States","1/7/09 7:39","1/7/09 12:38","40.71417","-74.00639"],["1/2/09 2:57","Product1","1200","Visa","chris","London","England","United Kingdom","1/3/08 7:23","1/7/09 13:14","51.52721","0.14559"],["1/1/09 20:21","Product1","1200","Visa","Maxine","Morton                      ","IL","United States","10/24/08 6:48","1/7/09 20:49","40.61278","-89.45917"],["1/8/09 0:42","Product1","1200","Visa","Family","Los Gatos                   ","CA","United States","1/8/09 0:28","1/8/09 3:39","37.22667","-121.97361"],["1/8/09 3:56","Product1","1200","Mastercard","Katherine","New York                    ","NY","United States","1/8/09 3:33","1/8/09 6:19","40.71417","-74.00639"],["1/8/09 3:16","Product1","1200","Mastercard","Linda","Miami                       ","FL","United States","1/8/09 3:06","1/8/09 6:34","25.77389","-80.19389"],["1/8/09 1:59","Product1","1200","Mastercard","SYLVIA","Vesenaz","Geneve","Switzerland","11/28/07 11:56","1/8/09 7:20","46.2333333","6.2"],["1/3/09 9:03","Product1","1200","Diners","Sheila","Brooklyn                    ","NY","United States","1/3/09 8:47","1/8/09 10:38","40.65","-73.95"],["1/5/09 13:17","Product1","1200","Mastercard","Stephanie","Badhoevedorp","Noord-Holland","Netherlands","1/5/09 12:45","1/8/09 11:45","52.3333333","4.7833333"],["1/6/09 7:46","Product1","1200","Amex","Kelly","Reston                      ","VA","United States","1/6/09 7:30","1/8/09 12:40","38.96861","-77.34139"],["1/5/09 20:00","Product2","3600","Visa","James","Burpengary","Queensland","Australia","12/10/08 19:53","1/8/09 17:58","-27.1666667","152.95"],["1/8/09 16:24","Product1","1200","Visa","jennifer","Phoenix                     ","AZ","United States","1/8/09 15:57","1/8/09 18:30","33.44833","-112.07333"],["1/9/09 6:39","Product1","1200","Mastercard","Anneli","Houston                     ","TX","United States","1/9/09 5:09","1/9/09 7:11","29.76306","-95.36306"],["1/6/09 22:19","Product2","3600","Amex","Ritz","Pittsfield                  ","VT","United States","1/6/09 12:00","1/9/09 10:05","43.77222","-72.81333"],["1/6/09 23:00","Product2","3600","Amex","Sylvia","Pittsfield                  ","VT","United States","1/6/09 12:00","1/9/09 10:05","43.77222","-72.81333"],["1/7/09 7:44","Product1","1200","Mastercard","Marie","Ball Ground                 ","GA",""],["United States","1/7/09 5:35","1/9/09 10:52","34.33806","-84.37667"]]
-
-/***/ }),
-
-/***/ "./assets/data.xml":
-/*!*************************!*\
-  !*** ./assets/data.xml ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {"PurchaseOrder":{"$":{"PurchaseOrderNumber":"99503","OrderDate":"1999-10-20"},"Address":[{"$":{"Type":"Shipping"},"Name":["Ellen Adams"],"Street":["123 Maple Street"],"City":["Mill Valley"],"State":["CA"],"Zip":["10999"],"Country":["USA"]},{"$":{"Type":"Billing"},"Name":["Tai Yee"],"Street":["8 Oak Avenue"],"City":["Old Town"],"State":["PA"],"Zip":["95819"],"Country":["USA"]}],"DeliveryNotes":["Please leave packages in shed by driveway."],"Items":[{"Item":[{"$":{"PartNumber":"872-AA"},"ProductName":["Lawnmower"],"Quantity":["1"],"USPrice":["148.95"],"Comment":["Confirm this is electric"]},{"$":{"PartNumber":"926-AA"},"ProductName":["Baby Monitor"],"Quantity":["2"],"USPrice":["39.98"],"ShipDate":["1999-05-21"]}]}]}}
-
-/***/ }),
-
-/***/ "./assets/image.jpg":
-/*!**************************!*\
-  !*** ./assets/image.jpg ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "3fbf68c8303f278c0b63fbc34854d1a0.jpg");
-
-/***/ }),
-
-/***/ "./babel.js":
-/*!******************!*\
-  !*** ./babel.js ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function start() {
-  return _start.apply(this, arguments);
-}
-
-function _start() {
-  _start = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            return _context.abrupt("return", 'async is working');
-
-          case 1:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _start.apply(this, arguments);
-}
-
-start().then(console.log);
-
-var Util = function Util() {
-  _classCallCheck(this, Util);
-};
-
-_defineProperty(Util, "id", Date.now());
-
-console.log('Util Id:', Util.id);
+module.exports = JSON.parse("{\"news\":[{\"id\":1,\"title\":\"Россия оказалась под угрозой потери первого места в медальном зачете Игр в Сочи\",\"text\":\"Сборная России может потерять первое место в медальном зачете зимних Олимпийских игр в Сочи 2014 года. Об этом стало известно после того, как биатлонист Евгений Устюгов, по информации источника, был признан виновным в нарушении допинговых правил, а его результаты с августа 2013 года по конец сезона 2013-2014 — аннулированы, пишет ТАСС. Как указывает агентство, в данный период попадает и сочинская Олимпиада, поэтому Устюгов должен быть лишен золота, завоеванного на этих Играх в эстафете. В связи с этим российская сборная лишится лидерства в общекомандном медальном зачете ОИ-2014 и опустится на третью строчку, пропустив вперед Норвегию и Канаду, которые займут первое и второе места соответственно.\",\"image\":{\"small\":\"./images/news1_small.jpg\",\"large\":\"./images/news1_large.jpg\"},\"features\":{\"newsCategory\":\"main\",\"newsDate\":\"today\",\"newsActivity\":\"high\",\"newsRating\":\"five\"}},{\"id\":2,\"title\":\"Уефа исключили «Манчестер Сити» из еврокубков на два сезона\",\"text\":\"Союз европейских футбольных ассоциаций (УЕФА) отстранил английский «Манчестер Сити» от участия в еврокубках в течение двух следующих сезонов за нарушение финансового фейр-плей. В ходе расследования УЕФА пришел к выводу, что клуб предоставлял неверную отчетность в период с 2012 по 2016 год. Санкции не ограничиваются исключением из еврокубков. Клуб будет обязан выплатить денежный штраф в размере 30 миллионов евро. Строгость наказания объясняется серьезными нарушениями «Сити» в отчетности финансовым органам УЕФА: клуб завышал суммы спонсорских контрактов авиакомпании Etihad. Основная часть средств поступала непосредственно от Abu Dhabi United Group — компании-владельца клуба Мансура ибн Зайд аль-Нахайяна.\",\"image\":{\"small\":\"./images/news2_small.jpg\",\"large\":\"./images/news2_large.jpg\"},\"features\":{\"newsCategory\":\"main\",\"newsDate\":\"previously\",\"newsActivity\":\"medium\",\"newsRating\":\"four\"}},{\"id\":3,\"title\":\"В Китае решили казнить за сокрытие заражения коронавирусом\",\"text\":\"В Китае решили казнить за сокрытие заражения коронавирусом, а также за искажение информации о состоянии больного. Об этом в субботу, 15 февраля, сообщает DW со ссылкой на заявление китайского суда. Помимо этого, уголовным преступлением будет считаться утаивание истории своих путешествий. Заболевший, а затем распространивший коронавирус человек будет обвинен в создании угрозы общественной безопасности и приговорен к 10-летнему либо пожизненному тюремному заключению или к смертной казни. Таким образом, комиссия по здравоохранению Китая запретила гражданам с симптомами вируса перемещаться по территории государства на автобусах, поездах и самолетах. Вернувшиеся после праздников из зоны очага эпидемии должны находиться дома или под наблюдением врачей две недели. Отказ от карантина будет караться наказанием.\",\"image\":{\"small\":\"./images/news3_small.jpg\",\"large\":\"./images/news3_large.jpg\"},\"features\":{\"newsCategory\":\"main\",\"newsDate\":\"previously\",\"newsActivity\":\"low\",\"newsRating\":\"three\"}},{\"id\":4,\"title\":\"План по Украине исчез с официального сайта Мюнхенской конференции\",\"text\":\"План по урегулированию ситуации на Украине исчез с официального сайта Мюнхенской конференции. Об этом сообщает Obozrevatel.ua. Также исчезло сообщение, в котором говорилось, что данный документ был разработан в соавторстве со специалистами по международной безопасности и поддержан ими, пишет издание. Документ был опубликован 14 февраля. Он получил название «Двенадцать шагов к большей безопасности на Украине и евроатлантическом регионе». «Мюнхенский план» включает восстановление работы Совместного центра по контролю координации (СЦКК), создание переговорной группы между военными ведомствами «нормандской четверки» (России, Украины, Германии и Франции), увеличение пропускной способности и безопасности на линии разграничения. В качестве гуманитарных мер предлагается поиск пропавших без вести в Донбассе и разминирование.\",\"image\":{\"small\":\"./images/news4_small.jpg\",\"large\":\"./images/news4_large.jpg\"},\"features\":{\"newsCategory\":\"main\",\"newsDate\":\"today\",\"newsActivity\":\"medium\",\"newsRating\":\"two\"}},{\"id\":5,\"title\":\"Оценены шансы России найти корабль для завершения «Северного потока-2»\",\"text\":\"Россия найдет корабль для завершения «Северного потока-2». Такое мнение высказал глава австрийской нефтяной компании OMV Райнер Зеле, передает Bloomberg. Зеле выразил уверенность в том, что Россия найдет нужный корабль. При этом он не смог ответить, каким способом прокладка труб будет завершена, и сколько времени на это понадобится. При этом глава OMV отметил, что технология прокладки труб не отличается особой сложностью. «Вопрос только в том, подходит ли установка корабля для укладки труб», — подчеркнул он. В декабре прошлого года США ввели новые санкции против «Северного потока-2». Вашингтон потребовал от компаний, ведущих укладку труб, немедленно прекратить строительство газопровода. В результате швейцарская компания Allseas заявила о прекращении работы над проектом.\",\"image\":{\"small\":\"./images/news5_small.jpg\",\"large\":\"./images/news5_large.jpg\"},\"features\":{\"newsCategory\":\"main\",\"newsDate\":\"today\",\"newsActivity\":\"high\",\"newsRating\":\"one\"}},{\"id\":6,\"title\":\"Россия оценила отказ Нидерландов в просьбе самостоятельного суда по делу MH17\",\"text\":\"Генеральная прокуратура России расценила отказ Нидерландов в просьбе самостоятельно судить троих обвиняемых в причастности к крушению малайзийского Boeing MH17 россиян как уклонение от всестороннего расследования катастрофы. Об этом сообщает «Интерфакс» со ссылкой на пресс-службу надзорного ведомства. Проведение всестороннего расследования авиакатастрофы, отмечают в Генпрокуратуре, предписано резолюцией Совбеза ООН. Представители ведомства отметили, что участие сотрудников правоохранительных органов России обеспечило «право потерпевших на установление истинных причин трагедии и на привлечение к ответственности виновных вне зависимости от их гражданской принадлежности».\",\"image\":{\"small\":\"./images/news6_small.jpg\",\"large\":\"./images/news6_large.jpg\"},\"features\":{\"newsCategory\":\"russia\",\"newsDate\":\"today\",\"newsActivity\":\"high\",\"newsRating\":\"four\"}},{\"id\":7,\"title\":\"В Минздраве одобрили документальный фильм Дудя о ВИЧ\",\"text\":\"Заместитель министра здравоохранения России Олег Салагай одобрил документальный фильм журналиста и блогера Юрия Дудя про эпидемию ВИЧ в России. Об этом политик написал в своем Telegram-канале. Салагай назвал фильм Дудя полезным, однако подчеркнул, что о подаче некоторых фактов можно подискутировать. «Но в целом в фильме приводится много важной информации», — добавил он. Чиновник отметил, что, помимо прочего, фильм обращает внимание на необходимость бороться с дискриминацией в отношении ВИЧ-положительных. «Сегодня ВИЧ — это не приговор, и очень важно, чтобы человек, у которого эта инфекция диагностирована, проходил лечение и жил обычной жизнью», — заключил Салагай.\",\"image\":{\"small\":\"./images/news7_small.jpg\",\"large\":\"./images/news7_large.jpg\"},\"features\":{\"newsCategory\":\"russia\",\"newsDate\":\"previously\",\"newsActivity\":\"high\",\"newsRating\":\"three\"}},{\"id\":8,\"title\":\"Пожизненно осужденный убийца выйдет на свободу после 60 лет в тюрьме\",\"text\":\"Американец Честер Вегер (Chester Weger), пожизненно осужденный за убийство женщины в парке Старвед Рок (Starved Rock) в штате Иллинойс, 21 февраля выйдет на свободу после почти 60 лет в тюрьме. Об этом пишет The Independent. Вегер добивался условно-досрочного освобождения с 1972 года, однако ему постоянно отказывали. Лишь в ноябре 2019-го совет, рассматривающий ходатайства об УДО, проголосовал в пользу заключенного, несмотря то, что внучки его жертвы высказались против освобождения, сообщала газета Chicago Tribune. 3 марта Вегеру исполнится 81 год, как отмечает издание, весь срок заключения он заявлял о своей невиновности.\",\"image\":{\"small\":\"./images/news8_small.jpg\",\"large\":\"./images/news8_large.jpg\"},\"features\":{\"newsCategory\":\"world\",\"newsDate\":\"today\",\"newsActivity\":\"medium\",\"newsRating\":\"three\"}},{\"id\":9,\"title\":\"Вечный палач. Северная Корея — это разруха,а Южная — рай с «Самсунгом». Так ли?\",\"text\":\"Северная Корея — это разруха, голод и диктатура, а Южная — рай с «Самсунгом», кей-попом и демократией. Примерно так рассуждают люди, воспитанные на антикимовской пропаганде. Между тем реальность куда сложнее и интереснее. Специально для «Ленты.ру» известный российский кореист Константин Асмолов написал цикл статей об истории Корейского полуострова и двух государств, бывших некогда одним целым. В прошлый раз мы рассказывали, как в Южной Корее 1980-х одна диктатура сменилась другой, а протестующих давили танками. В этот раз речь пойдет о том, как президент Чон Ду Хван создавал собственный культ и расправлялся с несогласными, и в то же время дружил с США и улучшал образ страны.\",\"image\":{\"small\":\"./images/news9_small.jpg\",\"large\":\"./images/news9_large.jpg\"},\"features\":{\"newsCategory\":\"world\",\"newsDate\":\"previously\",\"newsActivity\":\"low\",\"newsRating\":\"two\"}},{\"id\":10,\"title\":\"Мировая экономика оказалась под угрозой из-за смертельного китайского коронавируса\",\"text\":\"Мировая экономика оказалась под угрозой из-за эпидемии смертельного китайского коронавируса. Его распространение достигло таких масштабов, что игнорировать это уже невозможно. Вирус стал причиной падения цен на нефть, разрушил традиционные цепочки поставок и обрушил мировые фондовые рынки. Россия — не исключение: из-за сильной зависимости бюджета от цен на энергоресурсы и снижения доходов от них под вопросом оказался амбициозный план Владимира Путина по разгону экономики страны. Озноб мирового масштаба — в материале «Ленты.ру».\",\"image\":{\"small\":\"./images/news10_small.jpg\",\"large\":\"./images/news10_large.jpg\"},\"features\":{\"newsCategory\":\"economics\",\"newsDate\":\"previously\",\"newsActivity\":\"high\",\"newsRating\":\"five\"}},{\"id\":11,\"title\":\"Экономическому господству Китая и США решили бросить вызов\",\"text\":\"Экономическому господству Китая и США решили бросить вызов — пока Пекин страдает от смертельного коронавируса, а Вашингтон погряз в торговых войнах, в лидеры экономических рейтингов захотела выбиться Индия. Амбициозный план местных властей пока лишь вызывает насмешку у западных финансистов, однако премьер Нарендра Моди и его команда настроены совершенно серьезно. На помощь призваны главные практики ведущих стран: снижение налогов из США, программа развития экспорта из Китая и ставка на мегапроекты из России — они должны помочь Индии всего лишь за пять лет войти в тройку крупнейших экономик планеты. Амбициозный рывок на низком старте — в материале «Ленты.ру».\",\"image\":{\"small\":\"./images/news11_small.jpg\",\"large\":\"./images/news11_large.jpg\"},\"features\":{\"newsCategory\":\"economics\",\"newsDate\":\"previously\",\"newsActivity\":\"medium\",\"newsRating\":\"four\"}},{\"id\":12,\"title\":\"Попытка «Челси» взять реванш у МЮ и испытания для грандов — главные интриги\",\"text\":\"Попытка «Челси» взять реванш у МЮ и испытания для грандов — главные интриги тура АПЛ. Во второй части 26-го тура Английской премьер-лиги (АПЛ) Челси постарается взять реванш у «Манчестер Юнайтед» за разгромное поражение в первом круге. Тем же самым займется и «Норвич» в домашнем матче с лидером чемпионата «Ливерпулем». Поправить турнирное положение планируют лондонские «Тоттенхэм» и «Арсенал». Лента.ру — о главных интригах игрового уик-энда.\",\"image\":{\"small\":\"./images/news12_small.jpg\",\"large\":\"./images/news12_large.jpg\"},\"features\":{\"newsCategory\":\"sport\",\"newsDate\":\"today\",\"newsActivity\":\"high\",\"newsRating\":\"five\"}},{\"id\":13,\"title\":\"«Сибирь» досрочно вышла в плей-офф Кубка Гагарина Континентальной хоккейной лиги\",\"text\":\"«Сибирь» досрочно вышла в плей-офф Кубка Гагарина Континентальной хоккейной лиги. Новосибирский клуб пробился в раунд сильнейших впервые с сезона 2015-2016, говорится в сообщении пресс-службы команды, поступившем в редакцию «Ленты.ру». «Плей-офф – это другой уровень ответственности и самоотдачи. Все игроки нашей команды это понимают и будут играть на результат», — прокомментировал генеральный менеджер «Сибири» Кирилл Фастовский. С выходом в восьмерку сильнейших команду поздравил Дмитрий Босов, владелец группы «Сибантрацит», учредившей «Сибирь»: «Необходимо показать свою самую лучшую игру и продолжить движение вверх, к новым достижениям. Желаю команде побед!»\",\"image\":{\"small\":\"./images/news13_small.jpg\",\"large\":\"./images/news13_large.jpg\"},\"features\":{\"newsCategory\":\"sport\",\"newsDate\":\"today\",\"newsActivity\":\"medium\",\"newsRating\":\"four\"}},{\"id\":14,\"title\":\"Раскрыты способы защиты от коронавируса в отелях во время путешествия\",\"text\":\"Туристам во время пребывания в отелях следует принимать меры личной защиты во избежание заражения коронавирусом. Соответствующие способы раскрыла представитель Всемирной организации здравоохранения Кармен Долея, пишет Express. По ее словам, в первую очередь путешественникам в гостиничном номере стоит строго соблюдать гигиену. «Вы должны уделять внимание правильному мытью рук, использовать спиртосодержащие средства для этого и следить за тем, чтобы правила гигиены также соблюдались в отношении пищевых продуктов», — объяснила Долея. Кроме того, отметила эксперт, не стоит касаться немытыми руками глаз, носа и рта. Вдобавок необходимо держаться подальше от других постояльцев, которые выглядят заболевшими. В целом, чтобы снизить риск заражения коронавирусом в ходе путешествия, следует придерживаться тех же требований безопасности, как и при любом другом типе респираторных инфекций.\",\"image\":{\"small\":\"./images/news14_small.jpg\",\"large\":\"./images/news14_large.jpg\"},\"features\":{\"newsCategory\":\"journeys\",\"newsDate\":\"previously\",\"newsActivity\":\"medium\",\"newsRating\":\"three\"}},{\"id\":15,\"title\":\"Исчезнувшую при загадочных обстоятельствах туристку нашли мертвой\",\"text\":\"Туристку, которая путешествовала в одиночку по Новой Зеландии и исчезла в национальном парке при загадочных обстоятельствах, нашли мертвой. Об этом пишет Daily Mail. Тело 32-летней Стефани Симпсон (Stephanie Simpson) обнаружили неподалеку от того места, где ее видели в последний раз неделю назад — в национальном парке Маунт-Аспиринг на Южном острове. До этого спасатели отыскали ее походный рюкзак и обувь. По данным участников поисковой операции, никаких явных признаков, свидетельствующих о причинах смерти, выявлено не было. Родственники Симпсон рассказали, что туристка предпочитала активный отдых и имела большой опыт в походах.\",\"image\":{\"small\":\"./images/news15_small.jpg\",\"large\":\"./images/news15_large.jpg\"},\"features\":{\"newsCategory\":\"journeys\",\"newsDate\":\"previously\",\"newsActivity\":\"low\",\"newsRating\":\"one\"}}]}");
 
 /***/ }),
 
@@ -261,50 +175,19 @@ console.log('Util Id:', Util.id);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _assets_image_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/image.jpg */ "./assets/image.jpg");
-/* harmony import */ var _db_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../db.json */ "../db.json");
-var _db_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../db.json */ "../db.json", 1);
-/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/data.xml */ "./assets/data.xml");
-/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_data_xml__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _assets_data_csv__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/data.csv */ "./assets/data.csv");
-/* harmony import */ var _assets_data_csv__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_data_csv__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/style.css */ "./styles/style.css");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/scss.scss */ "./styles/scss.scss");
-/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./babel.js */ "./babel.js");
-/* harmony import */ var _babel_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_js__WEBPACK_IMPORTED_MODULE_7__);
-
-
-
-
-
-
- // eslint-disable-next-line import/extensions
+/* harmony import */ var _db_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../db.json */ "../db.json");
+var _db_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../db.json */ "../db.json", 1);
+/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style.scss */ "./styles/style.scss");
+/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
 /***/ }),
 
-/***/ "./styles/scss.scss":
-/*!**************************!*\
-  !*** ./styles/scss.scss ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(false) { var cssReload; }
-  
-
-/***/ }),
-
-/***/ "./styles/style.css":
-/*!**************************!*\
-  !*** ./styles/style.css ***!
-  \**************************/
+/***/ "./styles/style.scss":
+/*!***************************!*\
+  !*** ./styles/style.scss ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

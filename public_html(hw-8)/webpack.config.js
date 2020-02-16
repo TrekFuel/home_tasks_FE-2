@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const HandlebarsWebpackPlugin = require('handlebars-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 console.log('IS DEV:', isDev);
@@ -91,12 +92,20 @@ const plugins = () => {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src/favicon.ico'),
-        to: path.resolve(__dirname, 'dist'),
+        from: path.resolve(__dirname, 'src/assets/images'),
+        to: path.resolve(__dirname, 'dist/images'),
       },
     ]),
     new MiniCssExtractPlugin({
       filename: filename('css'),
+    }),
+    new HandlebarsWebpackPlugin({
+      entry: path.resolve(__dirname, 'src'),
+      output: path.resolve(__dirname, 'src', 'index.html'),
+      data: path.resolve(__dirname, './db.json'),
+      partials: [
+        path.join(process.cwd(), 'app', 'src', 'components', '*', '*.hbs'),
+      ],
     }),
   ];
 
@@ -112,7 +121,6 @@ module.exports = {
   mode: 'development',
   entry: {
     main: ['@babel/polyfill', './index.js'],
-    analytics: './ts.ts',
   },
   output: {
     filename: filename('js'),
@@ -142,7 +150,7 @@ module.exports = {
         use: cssLoaders('sass-loader'),
       },
       {
-        test: /\.(png|svg|gif|jpg)$/,
+        test: /\.(png|svg|gif|jpg|ico)$/,
         use: ['file-loader'],
       },
       {
