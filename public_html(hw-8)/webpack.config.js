@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const HandlebarsWebpackPlugin = require('handlebars-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 console.log('IS DEV:', isDev);
@@ -99,14 +98,6 @@ const plugins = () => {
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
-    new HandlebarsWebpackPlugin({
-      entry: path.resolve(__dirname, 'src'),
-      output: path.resolve(__dirname, 'src', 'index.html'),
-      data: path.resolve(__dirname, './db.json'),
-      partials: [
-        path.join(process.cwd(), 'app', 'src', 'components', '*', '*.hbs'),
-      ],
-    }),
   ];
 
   if (isProd) {
@@ -177,6 +168,11 @@ module.exports = {
           loader: 'babel-loader',
           options: babelOptions('@babel/preset-typescript'),
         },
+      },
+      {
+        test: /\.handlebars$/,
+        exclude: /node_modules/,
+        loader: 'handlebars-loader',
       },
     ],
   },

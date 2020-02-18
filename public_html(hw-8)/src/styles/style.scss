@@ -37,6 +37,14 @@ body {
   font-size: $MainFontSize - 0.12;
 }
 
+#allProductsPage p {
+  font-size: $MainFontSize - 0.25;
+}
+
+#singleProductPage p {
+  font-size: $MainFontSize - 0.25;
+}
+
 .container-button {
   max-width: 100px;
 }

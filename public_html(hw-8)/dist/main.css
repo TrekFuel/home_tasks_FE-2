@@ -30,6 +30,12 @@ body {
 .card-body h6 {
   font-size: 1.08rem; }
 
+#allProductsPage p {
+  font-size: 0.95rem; }
+
+#singleProductPage p {
+  font-size: 0.95rem; }
+
 .container-button {
   max-width: 100px; }
 
