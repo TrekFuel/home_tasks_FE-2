@@ -1,5 +1,5 @@
 {{#each this}}
-  <div class="col mt-3 single-product" data-index="{{id}}">
+  <div class="col mt-3 single-news" data-index="{{id}}">
     <div class="card">
       <img src="{{image.large}}"
            class="rounded mx-auto d-block mt-3"
@@ -14,12 +14,13 @@
         <p class="card-text">
           {{text}}
         </p>
-        <p class="text-muted">категория: {{features.newsCategory}}, дата выхода:
-          {{features.newsDate}}, активность: {{features.newsActivity}},
+        <p class="text-muted">категория: {{features.newsCategory}}; дата выхода:
+          {{features.newsDate}}; активность: {{features.newsActivity}};
           рейтинг: {{features.newsRating}}</p>
       </div>
       <button type="button"
-              class="btn-primary btn-sm ml-3 mb-3 container-button">
+              class="btn-primary btn-sm ml-3 mb-3 container-button
+              single-news-btn" data-index="{{id}}">
         На главную
       </button>
     </div>

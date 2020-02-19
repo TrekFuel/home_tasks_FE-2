@@ -119,9 +119,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.json', '.css', '.jpg'],
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
   },
   optimization: optimization(),
   devServer: {

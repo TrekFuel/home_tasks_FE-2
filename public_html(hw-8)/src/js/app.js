@@ -3,11 +3,29 @@ import '../styles/style.scss';
 import { CONFIG } from './config';
 import { Render } from './render';
 
-const previewTemplate = require('../templates/preview-template.handlebars');
-const viewTemplate = require('../templates/view-template.handlebars');
-
 class App {
   constructor() {
-    this.products = [];
+    this.news = [];
+    this.render = new Render();
+    this.init();
+  }
+
+  init() {
+    fetch(`${CONFIG.api}/news`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.news = data;
+        this.render.generateAllNews(data);
+      })
+      .then(() => {
+        this.render.renderMainPage();
+      });
   }
 }
+
+const app = new App();
