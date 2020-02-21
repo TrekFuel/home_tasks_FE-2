@@ -181,11 +181,13 @@ var _db_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_req
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config */ "./js/config.js");
 /* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./render */ "./js/render.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./router */ "./js/router.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -199,7 +201,8 @@ function () {
     _classCallCheck(this, App);
 
     this.news = [];
-    this.render = new _render__WEBPACK_IMPORTED_MODULE_3__["Render"]();
+    this.render = new _render__WEBPACK_IMPORTED_MODULE_3__["Render"](this.router);
+    this.router = new _router__WEBPACK_IMPORTED_MODULE_4__["Router"]();
     this.init();
   }
 
@@ -218,10 +221,18 @@ function () {
       }).then(function (data) {
         _this.news = data;
 
-        _this.render.generateAllNews(data);
-      }).then(function () {
-        _this.render.renderMainPage();
+        _this.render.generateAllNews(data); // this.render.initSingleNewsPage();
+
+
+        _this.initRouter();
+
+        _this.router.render(decodeURI(window.location.pathname));
       });
+    }
+  }, {
+    key: "initRouter",
+    value: function initRouter() {
+      this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news)); // this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
     }
   }]);
 
@@ -250,7 +261,7 @@ var CONFIG = {
     filtersPage: document.getElementById('filtersPage'),
     allNewsPage: document.getElementById('allNewsPage'),
     singleNewsPage: document.getElementById('singleNewsPage'),
-    singleNews: document.querySelector('.single-news'),
+    singleNews: document.querySelectorAll('.single-news'),
     singleNewsButton: document.querySelector('.single-news-btn'),
     signInPage: document.getElementById('signInPage'),
     signUpPage: document.getElementById('signUpPage'),
@@ -276,6 +287,14 @@ var CONFIG = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Render", function() { return Render; });
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ "./js/config.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -293,14 +312,18 @@ var Render =
 /*#__PURE__*/
 function () {
   // eslint-disable-next-line no-useless-constructor,no-empty-function
-  function Render() {
+  function Render(router) {
     _classCallCheck(this, Render);
+
+    this.router = router;
   } // eslint-disable-next-line class-methods-use-this
 
 
   _createClass(Render, [{
     key: "generateAllNews",
     value: function generateAllNews(data) {
+      var _this = this;
+
       var allNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.allNewsPage;
       allNewsPage.innerHTML = previewTemplate(data);
       allNewsPage.querySelectorAll('.single-news-btn').forEach(function (button) {
@@ -308,19 +331,99 @@ function () {
           event.preventDefault();
           var index = button.dataset.index;
           window.history.pushState(null, null, "/news/".concat(index));
+
+          _this.router.render(decodeURI(window.location.pathname));
         });
       });
     } // eslint-disable-next-line class-methods-use-this
 
   }, {
     key: "renderMainPage",
-    value: function renderMainPage() {
+    value: function renderMainPage(newsElems) {
       var mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
+      var allNews = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.singleNews;
+
+      _toConsumableArray(allNews).forEach(function (news) {
+        news.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayNone);
+      });
+
+      _toConsumableArray(allNews).forEach(function (news) {
+        newsElems.forEach(function (item) {
+          if (Number(news.dataset.index) === Number(item.id)) {
+            news.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayNone);
+          }
+        });
+      });
+
       mainPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
-    }
+    } // initSingleNewsPage() {
+    //   this.singleNewsPage = CONFIG.elements.singleNewsPage;
+    // }
+
   }]);
 
   return Render;
+}();
+
+/***/ }),
+
+/***/ "./js/router.js":
+/*!**********************!*\
+  !*** ./js/router.js ***!
+  \**********************/
+/*! exports provided: Router */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return Router; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ "./js/config.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+ // eslint-disable-next-line import/prefer-default-export
+
+var Router =
+/*#__PURE__*/
+function () {
+  function Router() {
+    var _this = this;
+
+    _classCallCheck(this, Router);
+
+    this.routes = {
+      404: function _() {
+        console.log('404 not found');
+      }
+    };
+    this.mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
+    window.addEventListener('popstate', function (event) {
+      event.preventDefault();
+
+      _this.render(decodeURI(window.location.pathname));
+    });
+  }
+
+  _createClass(Router, [{
+    key: "addRoute",
+    value: function addRoute(route, action) {
+      this.routes[route] = action;
+    }
+  }, {
+    key: "render",
+    value: function render(url) {
+      console.log(url);
+      var temp = url.split('/')[1];
+      this.mainPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock); // eslint-disable-next-line no-unused-expressions
+
+      this.routes[temp] ? this.routes[temp]() : this.routes['404']();
+    }
+  }]);
+
+  return Router;
 }();
 
 /***/ }),

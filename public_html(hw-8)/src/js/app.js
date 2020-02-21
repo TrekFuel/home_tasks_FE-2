@@ -1,12 +1,15 @@
 import json from '../db.json';
 import '../styles/style.scss';
+
 import { CONFIG } from './config';
 import { Render } from './render';
+import { Router } from './router';
 
 class App {
   constructor() {
     this.news = [];
-    this.render = new Render();
+    this.render = new Render(this.router);
+    this.router = new Router();
     this.init();
   }
 
@@ -21,10 +24,15 @@ class App {
       .then((data) => {
         this.news = data;
         this.render.generateAllNews(data);
-      })
-      .then(() => {
-        this.render.renderMainPage();
+        // this.render.initSingleNewsPage();
+        this.initRouter();
+        this.router.render(decodeURI(window.location.pathname));
       });
+  }
+
+  initRouter() {
+    this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
+    // this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
   }
 }
 

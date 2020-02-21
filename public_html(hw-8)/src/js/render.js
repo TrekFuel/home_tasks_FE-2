@@ -6,8 +6,8 @@ const viewTemplate = require('../templates/view-template.handlebars');
 // eslint-disable-next-line import/prefer-default-export
 export class Render {
   // eslint-disable-next-line no-useless-constructor,no-empty-function
-  constructor() {
-
+  constructor(router) {
+    this.router = router;
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -21,13 +21,32 @@ export class Render {
           event.preventDefault();
           const { index } = button.dataset;
           window.history.pushState(null, null, `/news/${index}`);
+          this.router.render(decodeURI(window.location.pathname));
         });
       });
   }
 
   // eslint-disable-next-line class-methods-use-this
-  renderMainPage() {
+  renderMainPage(newsElems) {
     const { mainPage } = CONFIG.elements;
+    const allNews = CONFIG.elements.singleNews;
+
+    [...allNews].forEach((news) => {
+      news.classList.add(CONFIG.displayNone);
+    });
+
+    [...allNews].forEach((news) => {
+      newsElems.forEach((item) => {
+        if (Number(news.dataset.index) === Number(item.id)) {
+          news.classList.remove(CONFIG.displayNone);
+        }
+      });
+    });
+
     mainPage.classList.add(CONFIG.displayBlock);
   }
+
+  // initSingleNewsPage() {
+  //   this.singleNewsPage = CONFIG.elements.singleNewsPage;
+  // }
 }
