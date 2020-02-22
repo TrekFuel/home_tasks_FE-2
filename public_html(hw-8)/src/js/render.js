@@ -14,17 +14,19 @@ export class Render {
   generateAllNews(data) {
     const { allNewsPage } = CONFIG.elements;
     allNewsPage.innerHTML = previewTemplate(data);
+    const singleNewsButton = document.querySelectorAll('.single-news-btn');
 
-    allNewsPage.querySelectorAll('.single-news-btn')
-      .forEach((button) => {
-        button.addEventListener('click', (event) => {
-          event.preventDefault();
-          const { index } = button.dataset;
-          window.history.pushState(null, null, `/news/${index}`);
-          this.router.render(decodeURI(window.location.pathname));
-        });
+    singleNewsButton.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const { index } = button.dataset;
+        window.history.pushState(null, null, `/news/${index}`);
+        console.log(window.location.pathname);
+        this.router.render(decodeURI(window.location.pathname));
       });
+    });
   }
+
 
   // eslint-disable-next-line class-methods-use-this
   renderMainPage(newsElems) {
@@ -46,7 +48,37 @@ export class Render {
     mainPage.classList.add(CONFIG.displayBlock);
   }
 
-  // initSingleNewsPage() {
-  //   this.singleNewsPage = CONFIG.elements.singleNewsPage;
-  // }
+  initSingleNewsPage() {
+    this.singleNewsPage = CONFIG.elements.singleNewsPage;
+    this.singleNewsPage.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (this.singleNewsPage.classList.contains(CONFIG.displayBlock)) {
+        const clicked = event.target;
+
+        if (clicked.classList.contains('back')) {
+          window.history.back();
+          this.router.render(decodeURI(window.location.pathname));
+        }
+      }
+    });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  renderSingleNewsPage(newsElems) {
+    const { singleNewsPage } = CONFIG.elements;
+    const index = window.location.pathname.split('/news/')[1].trim();
+    let isFind = false;
+
+    if (newsElems.length) {
+      newsElems.forEach((news) => {
+        if (Number(news.id) === Number(index)) {
+          isFind = true;
+          singleNewsPage.innerHTML = viewTemplate;
+        }
+      });
+    }
+
+    // eslint-disable-next-line no-unused-expressions
+    isFind ? singleNewsPage.classList.add(CONFIG.displayBlock) : console.log('404 not found');
+  }
 }

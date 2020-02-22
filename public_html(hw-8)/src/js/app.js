@@ -24,7 +24,7 @@ class App {
       .then((data) => {
         this.news = data;
         this.render.generateAllNews(data);
-        // this.render.initSingleNewsPage();
+        this.render.initSingleNewsPage();
         this.initRouter();
         this.router.render(decodeURI(window.location.pathname));
       });
@@ -32,7 +32,7 @@ class App {
 
   initRouter() {
     this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
-    // this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
+    this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
   }
 }
 

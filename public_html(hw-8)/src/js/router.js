@@ -22,7 +22,6 @@ export class Router {
   }
 
   render(url) {
-    console.log(url);
     const temp = url.split('/')[1];
 
     this.mainPage.classList.remove(CONFIG.displayBlock);

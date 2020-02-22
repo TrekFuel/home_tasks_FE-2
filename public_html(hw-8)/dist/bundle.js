@@ -221,8 +221,9 @@ function () {
       }).then(function (data) {
         _this.news = data;
 
-        _this.render.generateAllNews(data); // this.render.initSingleNewsPage();
+        _this.render.generateAllNews(data);
 
+        _this.render.initSingleNewsPage();
 
         _this.initRouter();
 
@@ -232,7 +233,8 @@ function () {
   }, {
     key: "initRouter",
     value: function initRouter() {
-      this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news)); // this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
+      this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
+      this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
     }
   }]);
 
@@ -262,7 +264,6 @@ var CONFIG = {
     allNewsPage: document.getElementById('allNewsPage'),
     singleNewsPage: document.getElementById('singleNewsPage'),
     singleNews: document.querySelectorAll('.single-news'),
-    singleNewsButton: document.querySelector('.single-news-btn'),
     signInPage: document.getElementById('signInPage'),
     signUpPage: document.getElementById('signUpPage'),
     aboutPage: document.getElementById('aboutPage'),
@@ -326,11 +327,13 @@ function () {
 
       var allNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.allNewsPage;
       allNewsPage.innerHTML = previewTemplate(data);
-      allNewsPage.querySelectorAll('.single-news-btn').forEach(function (button) {
+      var singleNewsButton = document.querySelectorAll('.single-news-btn');
+      singleNewsButton.forEach(function (button) {
         button.addEventListener('click', function (event) {
           event.preventDefault();
           var index = button.dataset.index;
           window.history.pushState(null, null, "/news/".concat(index));
+          console.log(window.location.pathname);
 
           _this.router.render(decodeURI(window.location.pathname));
         });
@@ -356,10 +359,47 @@ function () {
       });
 
       mainPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
-    } // initSingleNewsPage() {
-    //   this.singleNewsPage = CONFIG.elements.singleNewsPage;
-    // }
+    }
+  }, {
+    key: "initSingleNewsPage",
+    value: function initSingleNewsPage() {
+      var _this2 = this;
 
+      this.singleNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.singleNewsPage;
+      this.singleNewsPage.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (_this2.singleNewsPage.classList.contains(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock)) {
+          var clicked = event.target;
+
+          if (clicked.classList.contains('back')) {
+            window.history.back();
+
+            _this2.router.render(decodeURI(window.location.pathname));
+          }
+        }
+      });
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "renderSingleNewsPage",
+    value: function renderSingleNewsPage(newsElems) {
+      var singleNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.singleNewsPage;
+      var index = window.location.pathname.split('/news/')[1].trim();
+      var isFind = false;
+
+      if (newsElems.length) {
+        newsElems.forEach(function (news) {
+          if (Number(news.id) === Number(index)) {
+            isFind = true;
+            singleNewsPage.innerHTML = viewTemplate;
+          }
+        });
+      } // eslint-disable-next-line no-unused-expressions
+
+
+      isFind ? singleNewsPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock) : console.log('404 not found');
+    }
   }]);
 
   return Render;
@@ -415,7 +455,6 @@ function () {
   }, {
     key: "render",
     value: function render(url) {
-      console.log(url);
       var temp = url.split('/')[1];
       this.mainPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock); // eslint-disable-next-line no-unused-expressions
 
@@ -529,8 +568,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"features") : depth0)) != null ? lookupProperty(stack1,"newsActivity") : stack1), depth0))
     + ";\n          рейтинг: "
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"features") : depth0)) != null ? lookupProperty(stack1,"newsRating") : stack1), depth0))
-    + "</p>\n      </div>\n      <button type=\"button\"\n              class=\"btn-primary btn-sm ml-3 mb-3 container-button\n              single-news-btn\" data-index=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":23,"column":43},"end":{"line":23,"column":49}}}) : helper)))
+    + "</p>\n      </div>\n      <button type=\"button\"\n              class=\"btn-primary btn-sm ml-3 mb-3 container-button back\"\n              data-index=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":23,"column":26},"end":{"line":23,"column":32}}}) : helper)))
     + "\">\n        На главную\n      </button>\n    </div>\n  </div>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
