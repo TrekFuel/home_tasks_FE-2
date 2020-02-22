@@ -201,8 +201,8 @@ function () {
     _classCallCheck(this, App);
 
     this.news = [];
-    this.render = new _render__WEBPACK_IMPORTED_MODULE_3__["Render"](this.router);
     this.router = new _router__WEBPACK_IMPORTED_MODULE_4__["Router"]();
+    this.render = new _render__WEBPACK_IMPORTED_MODULE_3__["Render"](this.router);
     this.init();
   }
 
@@ -333,7 +333,6 @@ function () {
           event.preventDefault();
           var index = button.dataset.index;
           window.history.pushState(null, null, "/news/".concat(index));
-          console.log(window.location.pathname);
 
           _this.router.render(decodeURI(window.location.pathname));
         });
@@ -376,6 +375,8 @@ function () {
             window.history.back();
 
             _this2.router.render(decodeURI(window.location.pathname));
+
+            _this2.singleNewsPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
           }
         }
       });
@@ -392,7 +393,7 @@ function () {
         newsElems.forEach(function (news) {
           if (Number(news.id) === Number(index)) {
             isFind = true;
-            singleNewsPage.innerHTML = viewTemplate;
+            singleNewsPage.innerHTML = viewTemplate(news);
           }
         });
       } // eslint-disable-next-line no-unused-expressions
@@ -540,7 +541,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "../node_modules/handlebars/runtime.js");
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, alias5=container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -548,38 +549,29 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "  <div class=\"col mt-3 single-news\" data-index=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":2,"column":48},"end":{"line":2,"column":54}}}) : helper)))
-    + "\">\n    <div class=\"card\">\n      <img src=\""
+  return "<div class=\"col mt-3 single-news\" data-index=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":1,"column":46},"end":{"line":1,"column":52}}}) : helper)))
+    + "\">\n  <div class=\"card\">\n    <img src=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"image") : depth0)) != null ? lookupProperty(stack1,"large") : stack1), depth0))
-    + "\"\n           class=\"rounded mx-auto d-block mt-3\"\n           width=\"450\"\n           height=\"300\"\n           alt=\""
+    + "\"\n         class=\"rounded mx-auto d-block mt-3\"\n         width=\"480\"\n         height=\"300\"\n         alt=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":7,"column":14},"end":{"line":7,"column":23}}}) : helper)))
+    + "\"\n         title=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":8,"column":16},"end":{"line":8,"column":25}}}) : helper)))
-    + "\"\n           title=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":9,"column":18},"end":{"line":9,"column":27}}}) : helper)))
-    + "\"/>\n      <div class=\"card-body\">\n        <h5 class=\"card-title text-center font-weight-bold\">\n          "
-    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":12,"column":10},"end":{"line":12,"column":19}}}) : helper)))
-    + "\n        </h5>\n        <p class=\"card-text\">\n          "
-    + alias4(((helper = (helper = lookupProperty(helpers,"text") || (depth0 != null ? lookupProperty(depth0,"text") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data,"loc":{"start":{"line":15,"column":10},"end":{"line":15,"column":18}}}) : helper)))
-    + "\n        </p>\n        <p class=\"text-muted\">категория: "
+    + "\"/>\n    <div class=\"card-body\">\n      <h5 class=\"card-title text-center font-weight-bold\">\n        "
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":11,"column":8},"end":{"line":11,"column":17}}}) : helper)))
+    + "\n      </h5>\n      <p class=\"card-text\">\n        "
+    + alias4(((helper = (helper = lookupProperty(helpers,"text") || (depth0 != null ? lookupProperty(depth0,"text") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data,"loc":{"start":{"line":14,"column":8},"end":{"line":14,"column":16}}}) : helper)))
+    + "\n      </p>\n      <p class=\"text-muted\">категория: "
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"features") : depth0)) != null ? lookupProperty(stack1,"newsCategory") : stack1), depth0))
-    + "; дата выхода:\n          "
+    + "; дата выхода:\n        "
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"features") : depth0)) != null ? lookupProperty(stack1,"newsDate") : stack1), depth0))
     + "; активность: "
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"features") : depth0)) != null ? lookupProperty(stack1,"newsActivity") : stack1), depth0))
-    + ";\n          рейтинг: "
+    + ";\n        рейтинг: "
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"features") : depth0)) != null ? lookupProperty(stack1,"newsRating") : stack1), depth0))
-    + "</p>\n      </div>\n      <button type=\"button\"\n              class=\"btn-primary btn-sm ml-3 mb-3 container-button back\"\n              data-index=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":23,"column":26},"end":{"line":23,"column":32}}}) : helper)))
-    + "\">\n        На главную\n      </button>\n    </div>\n  </div>\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":28,"column":9}}})) != null ? stack1 : "");
+    + "</p>\n    </div>\n    <button type=\"button\"\n            class=\"btn-primary btn-sm ml-3 mb-3 container-button back\"\n            data-index=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":22,"column":24},"end":{"line":22,"column":30}}}) : helper)))
+    + "\">\n      На главную\n    </button>\n  </div>\n</div>\n";
 },"useData":true});
 
 /***/ }),

@@ -21,7 +21,6 @@ export class Render {
         event.preventDefault();
         const { index } = button.dataset;
         window.history.pushState(null, null, `/news/${index}`);
-        console.log(window.location.pathname);
         this.router.render(decodeURI(window.location.pathname));
       });
     });
@@ -58,6 +57,7 @@ export class Render {
         if (clicked.classList.contains('back')) {
           window.history.back();
           this.router.render(decodeURI(window.location.pathname));
+          this.singleNewsPage.classList.remove(CONFIG.displayBlock);
         }
       }
     });
@@ -73,7 +73,7 @@ export class Render {
       newsElems.forEach((news) => {
         if (Number(news.id) === Number(index)) {
           isFind = true;
-          singleNewsPage.innerHTML = viewTemplate;
+          singleNewsPage.innerHTML = viewTemplate(news);
         }
       });
     }

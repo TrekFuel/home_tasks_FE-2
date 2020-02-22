@@ -8,8 +8,8 @@ import { Router } from './router';
 class App {
   constructor() {
     this.news = [];
-    this.render = new Render(this.router);
     this.router = new Router();
+    this.render = new Render(this.router);
     this.init();
   }
 
