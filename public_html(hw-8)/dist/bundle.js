@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -267,6 +267,9 @@ var CONFIG = {
     signInPage: document.getElementById('signInPage'),
     signUpPage: document.getElementById('signUpPage'),
     aboutPage: document.getElementById('aboutPage'),
+    aboutButton: document.getElementById('aboutButton'),
+    backButton: document.getElementById('backButton'),
+    header: document.getElementsByTagName('header'),
     errorPage: document.getElementById('errorPage'),
     checkboxes: '#filtersPage input[type=checkbox]'
   },
@@ -312,7 +315,6 @@ var viewTemplate = __webpack_require__(/*! ../templates/view-template.handlebars
 var Render =
 /*#__PURE__*/
 function () {
-  // eslint-disable-next-line no-useless-constructor,no-empty-function
   function Render(router) {
     _classCallCheck(this, Render);
 
@@ -339,6 +341,7 @@ function () {
       });
 
       mainPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+      this.singleNewsPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
     } // eslint-disable-next-line class-methods-use-this
 
   }, {
@@ -375,8 +378,6 @@ function () {
             window.history.back();
 
             _this2.router.render(decodeURI(window.location.pathname));
-
-            _this2.singleNewsPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
           }
         }
       });
@@ -399,7 +400,13 @@ function () {
       } // eslint-disable-next-line no-unused-expressions
 
 
-      isFind ? singleNewsPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock) : console.log('404 not found');
+      isFind ? singleNewsPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock) : this.renderErrorPage();
+    }
+  }, {
+    key: "renderErrorPage",
+    value: function renderErrorPage() {
+      window.history.pushState(null, null, '/404');
+      this.router.render(decodeURI(window.location.pathname));
     }
   }]);
 
@@ -445,7 +452,8 @@ function () {
 
     this.routes = {
       404: function _() {
-        console.log('404 not found');
+        var errorPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.errorPage;
+        errorPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
       }
     };
     this.mainPage = document.querySelectorAll('#mainPage');

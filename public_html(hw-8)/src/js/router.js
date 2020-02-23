@@ -5,7 +5,8 @@ export class Router {
   constructor() {
     this.routes = {
       404: () => {
-        console.log('404 not found');
+        const { errorPage } = CONFIG.elements;
+        errorPage.classList.add(CONFIG.displayBlock);
       },
     };
 

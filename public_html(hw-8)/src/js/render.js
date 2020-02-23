@@ -5,7 +5,6 @@ const viewTemplate = require('../templates/view-template.handlebars');
 
 // eslint-disable-next-line import/prefer-default-export
 export class Render {
-  // eslint-disable-next-line no-useless-constructor,no-empty-function
   constructor(router) {
     this.router = router;
   }
@@ -28,6 +27,7 @@ export class Render {
     });
 
     mainPage.classList.add(CONFIG.displayBlock);
+    this.singleNewsPage.classList.remove(CONFIG.displayBlock);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -56,7 +56,6 @@ export class Render {
         if (clicked.classList.contains('back')) {
           window.history.back();
           this.router.render(decodeURI(window.location.pathname));
-          this.singleNewsPage.classList.remove(CONFIG.displayBlock);
         }
       }
     });
@@ -78,6 +77,11 @@ export class Render {
     }
 
     // eslint-disable-next-line no-unused-expressions
-    isFind ? singleNewsPage.classList.add(CONFIG.displayBlock) : console.log('404 not found');
+    isFind ? singleNewsPage.classList.add(CONFIG.displayBlock) : this.renderErrorPage();
+  }
+
+  renderErrorPage() {
+    window.history.pushState(null, null, '/404');
+    this.router.render(decodeURI(window.location.pathname));
   }
 }
