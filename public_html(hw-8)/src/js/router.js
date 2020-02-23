@@ -9,7 +9,7 @@ export class Router {
       },
     };
 
-    this.mainPage = CONFIG.elements.mainPage;
+    this.mainPage = document.querySelectorAll('#mainPage');
 
     window.addEventListener('popstate', (event) => {
       event.preventDefault();
@@ -24,7 +24,9 @@ export class Router {
   render(url) {
     const temp = url.split('/')[1];
 
-    this.mainPage.classList.remove(CONFIG.displayBlock);
+    [...this.mainPage].forEach((page) => {
+      page.classList.remove(CONFIG.displayBlock);
+    });
 
     // eslint-disable-next-line no-unused-expressions
     this.routes[temp] ? this.routes[temp]() : this.routes['404']();

@@ -321,25 +321,6 @@ function () {
 
 
   _createClass(Render, [{
-    key: "generateAllNews",
-    value: function generateAllNews(data) {
-      var _this = this;
-
-      var allNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.allNewsPage;
-      allNewsPage.innerHTML = previewTemplate(data);
-      var singleNewsButton = document.querySelectorAll('.single-news-btn');
-      singleNewsButton.forEach(function (button) {
-        button.addEventListener('click', function (event) {
-          event.preventDefault();
-          var index = button.dataset.index;
-          window.history.pushState(null, null, "/news/".concat(index));
-
-          _this.router.render(decodeURI(window.location.pathname));
-        });
-      });
-    } // eslint-disable-next-line class-methods-use-this
-
-  }, {
     key: "renderMainPage",
     value: function renderMainPage(newsElems) {
       var mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
@@ -358,6 +339,25 @@ function () {
       });
 
       mainPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "generateAllNews",
+    value: function generateAllNews(data) {
+      var _this = this;
+
+      var allNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.allNewsPage;
+      allNewsPage.innerHTML = previewTemplate(data);
+      var singleNewsButton = document.querySelectorAll('.single-news-btn');
+      singleNewsButton.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          var index = button.dataset.index;
+          window.history.pushState(null, null, "/news/".concat(index));
+
+          _this.router.render(decodeURI(window.location.pathname));
+        });
+      });
     }
   }, {
     key: "initSingleNewsPage",
@@ -419,6 +419,14 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return Router; });
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ "./js/config.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -440,7 +448,7 @@ function () {
         console.log('404 not found');
       }
     };
-    this.mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
+    this.mainPage = document.querySelectorAll('#mainPage');
     window.addEventListener('popstate', function (event) {
       event.preventDefault();
 
@@ -457,7 +465,11 @@ function () {
     key: "render",
     value: function render(url) {
       var temp = url.split('/')[1];
-      this.mainPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock); // eslint-disable-next-line no-unused-expressions
+
+      _toConsumableArray(this.mainPage).forEach(function (page) {
+        page.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+      }); // eslint-disable-next-line no-unused-expressions
+
 
       this.routes[temp] ? this.routes[temp]() : this.routes['404']();
     }

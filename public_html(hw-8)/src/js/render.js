@@ -11,23 +11,6 @@ export class Render {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  generateAllNews(data) {
-    const { allNewsPage } = CONFIG.elements;
-    allNewsPage.innerHTML = previewTemplate(data);
-    const singleNewsButton = document.querySelectorAll('.single-news-btn');
-
-    singleNewsButton.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        event.preventDefault();
-        const { index } = button.dataset;
-        window.history.pushState(null, null, `/news/${index}`);
-        this.router.render(decodeURI(window.location.pathname));
-      });
-    });
-  }
-
-
-  // eslint-disable-next-line class-methods-use-this
   renderMainPage(newsElems) {
     const { mainPage } = CONFIG.elements;
     const allNews = CONFIG.elements.singleNews;
@@ -45,6 +28,22 @@ export class Render {
     });
 
     mainPage.classList.add(CONFIG.displayBlock);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  generateAllNews(data) {
+    const { allNewsPage } = CONFIG.elements;
+    allNewsPage.innerHTML = previewTemplate(data);
+    const singleNewsButton = document.querySelectorAll('.single-news-btn');
+
+    singleNewsButton.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const { index } = button.dataset;
+        window.history.pushState(null, null, `/news/${index}`);
+        this.router.render(decodeURI(window.location.pathname));
+      });
+    });
   }
 
   initSingleNewsPage() {
