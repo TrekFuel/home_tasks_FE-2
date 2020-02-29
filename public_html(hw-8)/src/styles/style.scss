@@ -27,6 +27,15 @@ body {
 
 .container-main {
   max-width: 1300px;
+  border: black solid 0.05rem;
+}
+
+header {
+  border: none !important;
+}
+
+footer {
+  border: none !important;
 }
 
 .container-columns {
@@ -41,7 +50,15 @@ body {
   font-size: $MainFontSize - 0.25;
 }
 
+#singleNewsPage {
+  border: none !important;
+}
+
 #singleNewsPage p {
+  font-size: $MainFontSize - 0.25;
+}
+
+#postNewsPage {
   font-size: $MainFontSize - 0.25;
 }
 

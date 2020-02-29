@@ -155,17 +155,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./db.json":
-/*!*****************!*\
-  !*** ./db.json ***!
-  \*****************/
-/*! exports provided: news, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"news\":[{\"id\":1,\"title\":\"Россия оказалась под угрозой потери первого места в медальном зачете Игр в Сочи\",\"text\":\"Сборная России может потерять первое место в медальном зачете зимних Олимпийских игр в Сочи 2014 года. Об этом стало известно после того, как биатлонист Евгений Устюгов, по информации источника, был признан виновным в нарушении допинговых правил, а его результаты с августа 2013 года по конец сезона 2013-2014 — аннулированы, пишет ТАСС. Как указывает агентство, в данный период попадает и сочинская Олимпиада, поэтому Устюгов должен быть лишен золота, завоеванного на этих Играх в эстафете. В связи с этим российская сборная лишится лидерства в общекомандном медальном зачете ОИ-2014 и опустится на третью строчку, пропустив вперед Норвегию и Канаду, которые займут первое и второе места соответственно.\",\"image\":{\"small\":\"/images/news1_small.jpg\",\"large\":\"/images/news1_large.jpg\"},\"features\":{\"newsCategory\":\"главное\",\"newsDate\":\"сегодня\",\"newsActivity\":\"высокая\",\"newsRating\":\"5\"}},{\"id\":2,\"title\":\"Уефа исключили «Манчестер Сити» из еврокубков на два сезона\",\"text\":\"Союз европейских футбольных ассоциаций (УЕФА) отстранил английский «Манчестер Сити» от участия в еврокубках в течение двух следующих сезонов за нарушение финансового фейр-плей. В ходе расследования УЕФА пришел к выводу, что клуб предоставлял неверную отчетность в период с 2012 по 2016 год. Санкции не ограничиваются исключением из еврокубков. Клуб будет обязан выплатить денежный штраф в размере 30 миллионов евро. Строгость наказания объясняется серьезными нарушениями «Сити» в отчетности финансовым органам УЕФА: клуб завышал суммы спонсорских контрактов авиакомпании Etihad. Основная часть средств поступала непосредственно от Abu Dhabi United Group — компании-владельца клуба Мансура ибн Зайд аль-Нахайяна.\",\"image\":{\"small\":\"/images/news2_small.jpg\",\"large\":\"/images/news2_large.jpg\"},\"features\":{\"newsCategory\":\"главное\",\"newsDate\":\"ранее\",\"newsActivity\":\"высокая\",\"newsRating\":\"4\"}},{\"id\":3,\"title\":\"В Китае решили казнить за сокрытие заражения коронавирусом\",\"text\":\"В Китае решили казнить за сокрытие заражения коронавирусом, а также за искажение информации о состоянии больного. Об этом в субботу, 15 февраля, сообщает DW со ссылкой на заявление китайского суда. Помимо этого, уголовным преступлением будет считаться утаивание истории своих путешествий. Заболевший, а затем распространивший коронавирус человек будет обвинен в создании угрозы общественной безопасности и приговорен к 10-летнему либо пожизненному тюремному заключению или к смертной казни. Таким образом, комиссия по здравоохранению Китая запретила гражданам с симптомами вируса перемещаться по территории государства на автобусах, поездах и самолетах. Вернувшиеся после праздников из зоны очага эпидемии должны находиться дома или под наблюдением врачей две недели. Отказ от карантина будет караться наказанием.\",\"image\":{\"small\":\"/images/news3_small.jpg\",\"large\":\"/images/news3_large.jpg\"},\"features\":{\"newsCategory\":\"главное\",\"newsDate\":\"ранее\",\"newsActivity\":\"низкая\",\"newsRating\":\"3\"}},{\"id\":4,\"title\":\"План по Украине исчез с официального сайта Мюнхенской конференции\",\"text\":\"План по урегулированию ситуации на Украине исчез с официального сайта Мюнхенской конференции. Об этом сообщает Obozrevatel.ua. Также исчезло сообщение, в котором говорилось, что данный документ был разработан в соавторстве со специалистами по международной безопасности и поддержан ими, пишет издание. Документ был опубликован 14 февраля. Он получил название «Двенадцать шагов к большей безопасности на Украине и евроатлантическом регионе». «Мюнхенский план» включает восстановление работы Совместного центра по контролю координации (СЦКК), создание переговорной группы между военными ведомствами «нормандской четверки» (России, Украины, Германии и Франции), увеличение пропускной способности и безопасности на линии разграничения. В качестве гуманитарных мер предлагается поиск пропавших без вести в Донбассе и разминирование.\",\"image\":{\"small\":\"/images/news4_small.jpg\",\"large\":\"/images/news4_large.jpg\"},\"features\":{\"newsCategory\":\"главное\",\"newsDate\":\"сегодня\",\"newsActivity\":\"средняя\",\"newsRating\":\"2\"}},{\"id\":5,\"title\":\"Оценены шансы России найти корабль для завершения «Северного потока-2»\",\"text\":\"Россия найдет корабль для завершения «Северного потока-2». Такое мнение высказал глава австрийской нефтяной компании OMV Райнер Зеле, передает Bloomberg. Зеле выразил уверенность в том, что Россия найдет нужный корабль. При этом он не смог ответить, каким способом прокладка труб будет завершена, и сколько времени на это понадобится. При этом глава OMV отметил, что технология прокладки труб не отличается особой сложностью. «Вопрос только в том, подходит ли установка корабля для укладки труб», — подчеркнул он. В декабре прошлого года США ввели новые санкции против «Северного потока-2». Вашингтон потребовал от компаний, ведущих укладку труб, немедленно прекратить строительство газопровода. В результате швейцарская компания Allseas заявила о прекращении работы над проектом.\",\"image\":{\"small\":\"/images/news5_small.jpg\",\"large\":\"/images/news5_large.jpg\"},\"features\":{\"newsCategory\":\"главное\",\"newsDate\":\"сегодня\",\"newsActivity\":\"высокая\",\"newsRating\":\"1\"}},{\"id\":6,\"title\":\"Россия оценила отказ Нидерландов в просьбе самостоятельного суда по делу MH17\",\"text\":\"Генеральная прокуратура России расценила отказ Нидерландов в просьбе самостоятельно судить троих обвиняемых в причастности к крушению малайзийского Boeing MH17 россиян как уклонение от всестороннего расследования катастрофы. Об этом сообщает «Интерфакс» со ссылкой на пресс-службу надзорного ведомства. Проведение всестороннего расследования авиакатастрофы, отмечают в Генпрокуратуре, предписано резолюцией Совбеза ООН. Представители ведомства отметили, что участие сотрудников правоохранительных органов России обеспечило «право потерпевших на установление истинных причин трагедии и на привлечение к ответственности виновных вне зависимости от их гражданской принадлежности».\",\"image\":{\"small\":\"/images/news6_small.jpg\",\"large\":\"/images/news6_large.jpg\"},\"features\":{\"newsCategory\":\"Россия\",\"newsDate\":\"сегодня\",\"newsActivity\":\"высокая\",\"newsRating\":\"4\"}},{\"id\":7,\"title\":\"В Минздраве одобрили документальный фильм Дудя о ВИЧ\",\"text\":\"Заместитель министра здравоохранения России Олег Салагай одобрил документальный фильм журналиста и блогера Юрия Дудя про эпидемию ВИЧ в России. Об этом политик написал в своем Telegram-канале. Салагай назвал фильм Дудя полезным, однако подчеркнул, что о подаче некоторых фактов можно подискутировать. «Но в целом в фильме приводится много важной информации», — добавил он. Чиновник отметил, что, помимо прочего, фильм обращает внимание на необходимость бороться с дискриминацией в отношении ВИЧ-положительных. «Сегодня ВИЧ — это не приговор, и очень важно, чтобы человек, у которого эта инфекция диагностирована, проходил лечение и жил обычной жизнью», — заключил Салагай.\",\"image\":{\"small\":\"/images/news7_small.jpg\",\"large\":\"/images/news7_large.jpg\"},\"features\":{\"newsCategory\":\"Россия\",\"newsDate\":\"ранее\",\"newsActivity\":\"высокая\",\"newsRating\":\"3\"}},{\"id\":8,\"title\":\"Пожизненно осужденный убийца выйдет на свободу после 60 лет в тюрьме\",\"text\":\"Американец Честер Вегер (Chester Weger), пожизненно осужденный за убийство женщины в парке Старвед Рок (Starved Rock) в штате Иллинойс, 21 февраля выйдет на свободу после почти 60 лет в тюрьме. Об этом пишет The Independent. Вегер добивался условно-досрочного освобождения с 1972 года, однако ему постоянно отказывали. Лишь в ноябре 2019-го совет, рассматривающий ходатайства об УДО, проголосовал в пользу заключенного, несмотря то, что внучки его жертвы высказались против освобождения, сообщала газета Chicago Tribune. 3 марта Вегеру исполнится 81 год, как отмечает издание, весь срок заключения он заявлял о своей невиновности.\",\"image\":{\"small\":\"/images/news8_small.jpg\",\"large\":\"/images/news8_large.jpg\"},\"features\":{\"newsCategory\":\"мир\",\"newsDate\":\"сегодня\",\"newsActivity\":\"средняя\",\"newsRating\":\"3\"}},{\"id\":9,\"title\":\"Вечный палач. Северная Корея — это разруха,а Южная — рай с «Самсунгом». Так ли?\",\"text\":\"Северная Корея — это разруха, голод и диктатура, а Южная — рай с «Самсунгом», кей-попом и демократией. Примерно так рассуждают люди, воспитанные на антикимовской пропаганде. Между тем реальность куда сложнее и интереснее. Специально для «Ленты.ру» известный российский кореист Константин Асмолов написал цикл статей об истории Корейского полуострова и двух государств, бывших некогда одним целым. В прошлый раз мы рассказывали, как в Южной Корее 1980-х одна диктатура сменилась другой, а протестующих давили танками. В этот раз речь пойдет о том, как президент Чон Ду Хван создавал собственный культ и расправлялся с несогласными, и в то же время дружил с США и улучшал образ страны.\",\"image\":{\"small\":\"/images/news9_small.jpg\",\"large\":\"/images/news9_large.jpg\"},\"features\":{\"newsCategory\":\"мир\",\"newsDate\":\"ранее\",\"newsActivity\":\"низкая\",\"newsRating\":\"2\"}},{\"id\":10,\"title\":\"Мировая экономика оказалась под угрозой из-за смертельного китайского коронавируса\",\"text\":\"Мировая экономика оказалась под угрозой из-за эпидемии смертельного китайского коронавируса. Его распространение достигло таких масштабов, что игнорировать это уже невозможно. Вирус стал причиной падения цен на нефть, разрушил традиционные цепочки поставок и обрушил мировые фондовые рынки. Россия — не исключение: из-за сильной зависимости бюджета от цен на энергоресурсы и снижения доходов от них под вопросом оказался амбициозный план Владимира Путина по разгону экономики страны. Озноб мирового масштаба — в материале «Ленты.ру».\",\"image\":{\"small\":\"/images/news10_small.jpg\",\"large\":\"/images/news10_large.jpg\"},\"features\":{\"newsCategory\":\"экономика\",\"newsDate\":\"ранее\",\"newsActivity\":\"высокая\",\"newsRating\":\"5\"}},{\"id\":11,\"title\":\"Экономическому господству Китая и США решили бросить вызов\",\"text\":\"Экономическому господству Китая и США решили бросить вызов — пока Пекин страдает от смертельного коронавируса, а Вашингтон погряз в торговых войнах, в лидеры экономических рейтингов захотела выбиться Индия. Амбициозный план местных властей пока лишь вызывает насмешку у западных финансистов, однако премьер Нарендра Моди и его команда настроены совершенно серьезно. На помощь призваны главные практики ведущих стран: снижение налогов из США, программа развития экспорта из Китая и ставка на мегапроекты из России — они должны помочь Индии всего лишь за пять лет войти в тройку крупнейших экономик планеты. Амбициозный рывок на низком старте — в материале «Ленты.ру».\",\"image\":{\"small\":\"/images/news11_small.jpg\",\"large\":\"/images/news11_large.jpg\"},\"features\":{\"newsCategory\":\"экономика\",\"newsDate\":\"ранее\",\"newsActivity\":\"средняя\",\"newsRating\":\"4\"}},{\"id\":12,\"title\":\"Попытка «Челси» взять реванш у МЮ и испытания для грандов — главные интриги\",\"text\":\"Попытка «Челси» взять реванш у МЮ и испытания для грандов — главные интриги тура АПЛ. Во второй части 26-го тура Английской премьер-лиги (АПЛ) Челси постарается взять реванш у «Манчестер Юнайтед» за разгромное поражение в первом круге. Тем же самым займется и «Норвич» в домашнем матче с лидером чемпионата «Ливерпулем». Поправить турнирное положение планируют лондонские «Тоттенхэм» и «Арсенал». Лента.ру — о главных интригах игрового уик-энда.\",\"image\":{\"small\":\"/images/news12_small.jpg\",\"large\":\"/images/news12_large.jpg\"},\"features\":{\"newsCategory\":\"спорт\",\"newsDate\":\"сегодня\",\"newsActivity\":\"высокая\",\"newsRating\":\"5\"}},{\"id\":13,\"title\":\"«Сибирь» досрочно вышла в плей-офф Кубка Гагарина Континентальной хоккейной лиги\",\"text\":\"«Сибирь» досрочно вышла в плей-офф Кубка Гагарина Континентальной хоккейной лиги. Новосибирский клуб пробился в раунд сильнейших впервые с сезона 2015-2016, говорится в сообщении пресс-службы команды, поступившем в редакцию «Ленты.ру». «Плей-офф – это другой уровень ответственности и самоотдачи. Все игроки нашей команды это понимают и будут играть на результат», — прокомментировал генеральный менеджер «Сибири» Кирилл Фастовский. С выходом в восьмерку сильнейших команду поздравил Дмитрий Босов, владелец группы «Сибантрацит», учредившей «Сибирь»: «Необходимо показать свою самую лучшую игру и продолжить движение вверх, к новым достижениям. Желаю команде побед!»\",\"image\":{\"small\":\"/images/news13_small.jpg\",\"large\":\"/images/news13_large.jpg\"},\"features\":{\"newsCategory\":\"спорт\",\"newsDate\":\"сегодня\",\"newsActivity\":\"средняя\",\"newsRating\":\"4\"}},{\"id\":14,\"title\":\"Раскрыты способы защиты от коронавируса в отелях во время путешествия\",\"text\":\"Туристам во время пребывания в отелях следует принимать меры личной защиты во избежание заражения коронавирусом. Соответствующие способы раскрыла представитель Всемирной организации здравоохранения Кармен Долея, пишет Express. По ее словам, в первую очередь путешественникам в гостиничном номере стоит строго соблюдать гигиену. «Вы должны уделять внимание правильному мытью рук, использовать спиртосодержащие средства для этого и следить за тем, чтобы правила гигиены также соблюдались в отношении пищевых продуктов», — объяснила Долея. Кроме того, отметила эксперт, не стоит касаться немытыми руками глаз, носа и рта. Вдобавок необходимо держаться подальше от других постояльцев, которые выглядят заболевшими. В целом, чтобы снизить риск заражения коронавирусом в ходе путешествия, следует придерживаться тех же требований безопасности, как и при любом другом типе респираторных инфекций.\",\"image\":{\"small\":\"/images/news14_small.jpg\",\"large\":\"/images/news14_large.jpg\"},\"features\":{\"newsCategory\":\"путешествия\",\"newsDate\":\"ранее\",\"newsActivity\":\"средняя\",\"newsRating\":\"3\"}},{\"id\":15,\"title\":\"Исчезнувшую при загадочных обстоятельствах туристку нашли мертвой\",\"text\":\"Туристку, которая путешествовала в одиночку по Новой Зеландии и исчезла в национальном парке при загадочных обстоятельствах, нашли мертвой. Об этом пишет Daily Mail. Тело 32-летней Стефани Симпсон (Stephanie Simpson) обнаружили неподалеку от того места, где ее видели в последний раз неделю назад — в национальном парке Маунт-Аспиринг на Южном острове. До этого спасатели отыскали ее походный рюкзак и обувь. По данным участников поисковой операции, никаких явных признаков, свидетельствующих о причинах смерти, выявлено не было. Родственники Симпсон рассказали, что туристка предпочитала активный отдых и имела большой опыт в походах.\",\"image\":{\"small\":\"/images/news15_small.jpg\",\"large\":\"/images/news15_large.jpg\"},\"features\":{\"newsCategory\":\"путешествия\",\"newsDate\":\"ранее\",\"newsActivity\":\"низкая\",\"newsRating\":\"1\"}}]}");
-
-/***/ }),
-
 /***/ "./js/app.js":
 /*!*******************!*\
   !*** ./js/app.js ***!
@@ -175,18 +164,19 @@ module.exports = JSON.parse("{\"news\":[{\"id\":1,\"title\":\"Россия ок�
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _db_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../db.json */ "./db.json");
-var _db_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../db.json */ "./db.json", 1);
-/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/style.scss */ "./styles/style.scss");
-/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config */ "./js/config.js");
-/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./render */ "./js/render.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./router */ "./js/router.js");
+/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/style.scss */ "./styles/style.scss");
+/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config */ "./js/config.js");
+/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render */ "./js/render.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./js/router.js");
+/* harmony import */ var _checkbox_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox-service */ "./js/checkbox-service.js");
+/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post */ "./js/post.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -201,8 +191,11 @@ function () {
     _classCallCheck(this, App);
 
     this.news = [];
-    this.router = new _router__WEBPACK_IMPORTED_MODULE_4__["Router"]();
-    this.render = new _render__WEBPACK_IMPORTED_MODULE_3__["Render"](this.router);
+    this.router = new _router__WEBPACK_IMPORTED_MODULE_3__["Router"]();
+    this.checkboxService = new _checkbox_service__WEBPACK_IMPORTED_MODULE_4__["CheckboxService"]();
+    this.render = new _render__WEBPACK_IMPORTED_MODULE_2__["Render"](this.checkboxService, this.router);
+    this.checkboxService.subscribe(this.onFilterChange.bind(this));
+    this.post = new _post__WEBPACK_IMPORTED_MODULE_5__["Post"]();
     this.init();
   }
 
@@ -211,7 +204,7 @@ function () {
     value: function init() {
       var _this = this;
 
-      fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].api, "/news"), {
+      fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_1__["CONFIG"].api, "/news"), {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -223,7 +216,11 @@ function () {
 
         _this.render.generateAllNews(data);
 
+        _this.post.initPost();
+
         _this.render.initSingleNewsPage();
+
+        _this.render.initResetCheckbox();
 
         _this.initRouter();
 
@@ -235,6 +232,13 @@ function () {
     value: function initRouter() {
       this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
       this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
+      this.router.addRoute('filter', this.render.renderFilterResult.bind(this.render, this.news, this.checkboxService.filters));
+    }
+  }, {
+    key: "onFilterChange",
+    value: function onFilterChange(data) {
+      window.history.pushState(null, null, data);
+      this.router.render(decodeURI(window.location.pathname));
     }
   }]);
 
@@ -242,6 +246,126 @@ function () {
 }();
 
 var app = new App();
+
+/***/ }),
+
+/***/ "./js/checkbox-service.js":
+/*!********************************!*\
+  !*** ./js/checkbox-service.js ***!
+  \********************************/
+/*! exports provided: CheckboxService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckboxService", function() { return CheckboxService; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ "./js/config.js");
+/* harmony import */ var _observable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./observable */ "./js/observable.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+ // eslint-disable-next-line import/prefer-default-export
+
+var CheckboxService =
+/*#__PURE__*/
+function () {
+  function CheckboxService() {
+    _classCallCheck(this, CheckboxService);
+
+    // eslint-disable-next-line no-underscore-dangle
+    this._checkboxes = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.checkboxes; // eslint-disable-next-line no-underscore-dangle
+
+    this._observable = new _observable__WEBPACK_IMPORTED_MODULE_1__["Observable"]();
+    this.filters = {};
+    this.initialState();
+    this.init();
+  }
+
+  _createClass(CheckboxService, [{
+    key: "subscribe",
+    value: function subscribe(fn) {
+      // eslint-disable-next-line no-underscore-dangle
+      this._observable.subscribe(fn);
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      // eslint-disable-next-line no-underscore-dangle
+      this._checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('click', _this.onCheckboxClick.bind(_this));
+      });
+
+      var clearFiltersBtn = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.clearFiltersBtn;
+      clearFiltersBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        _this.filters = {}; // eslint-disable-next-line no-underscore-dangle
+
+        _this._observable.next('/');
+      });
+    }
+  }, {
+    key: "onCheckboxClick",
+    value: function onCheckboxClick(event) {
+      var target = event.target;
+      var specName = target.getAttribute('name');
+
+      if (target.checked) {
+        if (!(this.filters[specName] && this.filters[specName].length)) {
+          this.filters[specName] = [];
+        }
+
+        this.filters[specName].push(target.value);
+      } else {
+        if (this.filters[specName] && this.filters[specName].length && this.filters[specName].includes(target.value)) {
+          var index = this.filters[specName].indexOf(target.value);
+          this.filters[specName].splice(index, 1);
+        }
+
+        if (!this.filters[specName].length) {
+          delete this.filters[specName];
+        }
+      } // eslint-disable-next-line no-underscore-dangle
+
+
+      this._observable.next(this.createQueryHash());
+    }
+  }, {
+    key: "initialState",
+    value: function initialState() {
+      if (window.location.pathname.includes('filter/')) {
+        var filter = window.location.pathname.split('/filter/')[1].trim();
+
+        try {
+          this.filters = JSON.parse(decodeURI(filter));
+        } catch (e) {
+          this.filters = {};
+        }
+      }
+    }
+  }, {
+    key: "createQueryHash",
+    value: function createQueryHash() {
+      if (Object.keys(this.filters).length > 0) {
+        return "filter/".concat(JSON.stringify(this.filters));
+      }
+
+      return '/';
+    }
+  }, {
+    key: "getCurrentState",
+    value: function getCurrentState() {
+      return this.createQueryHash();
+    }
+  }]);
+
+  return CheckboxService;
+}();
 
 /***/ }),
 
@@ -264,19 +388,200 @@ var CONFIG = {
     allNewsPage: document.getElementById('allNewsPage'),
     singleNewsPage: document.getElementById('singleNewsPage'),
     singleNews: document.querySelectorAll('.single-news'),
-    signInPage: document.getElementById('signInPage'),
-    signUpPage: document.getElementById('signUpPage'),
     aboutPage: document.getElementById('aboutPage'),
+    postNewsPage: document.getElementById('postNewsPage'),
+    postForm: document.getElementById('postForm'),
+    emailInput: document.getElementById('emailInput'),
+    nameInput: document.getElementById('nameInput'),
+    countryInput: document.getElementById('countryInput'),
+    topicInput: document.getElementById('topicInput'),
+    textInput: document.getElementById('textInput'),
     aboutButton: document.getElementById('aboutButton'),
     backButton: document.getElementById('backButton'),
     header: document.getElementsByTagName('header'),
     errorPage: document.getElementById('errorPage'),
-    checkboxes: '#filtersPage input[type=checkbox]'
+    checkboxes: document.querySelector('#filtersPage').querySelectorAll('input[type=checkbox]'),
+    clearFiltersBtn: document.getElementById('clearFiltersBtn')
   },
   displayNone: 'd-none',
   displayBlock: 'd-block',
   filterOptions: ['newsCategory', 'newsDate', 'newsActivity', 'newsRating']
 };
+
+/***/ }),
+
+/***/ "./js/observable.js":
+/*!**************************!*\
+  !*** ./js/observable.js ***!
+  \**************************/
+/*! exports provided: Observable */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Observable", function() { return Observable; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// eslint-disable-next-line import/prefer-default-export
+var Observable =
+/*#__PURE__*/
+function () {
+  function Observable() {
+    _classCallCheck(this, Observable);
+
+    this.subscribers = [];
+  }
+
+  _createClass(Observable, [{
+    key: "subscribe",
+    value: function subscribe(fn) {
+      this.subscribers.push(fn);
+    }
+  }, {
+    key: "next",
+    value: function next(data) {
+      this.subscribers.forEach(function (sb) {
+        sb(data);
+      });
+    }
+  }]);
+
+  return Observable;
+}();
+
+/***/ }),
+
+/***/ "./js/post.js":
+/*!********************!*\
+  !*** ./js/post.js ***!
+  \********************/
+/*! exports provided: Post */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Post", function() { return Post; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-validation */ "../node_modules/jquery-validation/dist/jquery.validate.js");
+/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_validation__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config */ "./js/config.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+ // eslint-disable-next-line import/prefer-default-export
+
+var Post =
+/*#__PURE__*/
+function () {
+  function Post() {
+    _classCallCheck(this, Post);
+
+    this.api = _config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].api;
+  }
+
+  _createClass(Post, [{
+    key: "sendPost",
+    value: function sendPost() {
+      var emailInput = _config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].elements.emailInput;
+      var nameInput = _config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].elements.nameInput;
+      var countryInput = _config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].elements.countryInput;
+      var topicInput = _config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].elements.topicInput;
+      var textInput = _config__WEBPACK_IMPORTED_MODULE_2__["CONFIG"].elements.textInput;
+      fetch("".concat(this.api, "/suggestedNews"), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: "".concat(emailInput.value),
+          name: "".concat(nameInput.value),
+          country: "".concat(countryInput.value),
+          topic: "".concat(topicInput.value),
+          text: "".concat(textInput.value)
+        })
+      }).then(function (res) {
+        if (res.status !== 201) {
+          // eslint-disable-next-line new-cap
+          return Promise.reject(new Error(res.statusText));
+        }
+
+        return Promise.resolve(res);
+      }).then(function () {
+        emailInput.value = '';
+        nameInput.value = '';
+        countryInput.value = '';
+        topicInput.value = '';
+        textInput.value = '';
+      });
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "initPost",
+    value: function initPost() {
+      var _this = this;
+
+      var options = {
+        submitHandler: function submitHandler() {
+          _this.sendPost();
+
+          var successMsg = document.createElement('div');
+          successMsg.innerHTML = 'Ваша новость была успешно отправлена. Спасибо!';
+          successMsg.className = 'alert alert-success mt-5 font-italic text-monospace';
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('#postForm').after(successMsg);
+          setTimeout(function () {
+            successMsg.remove();
+          }, 5000);
+        },
+        invalidHandler: function invalidHandler() {
+          var errorMsg = document.createElement('div');
+          errorMsg.innerHTML = 'Пожалуйста, проверьте правильность ввода данных!';
+          errorMsg.className = 'alert alert-danger mt-5 font-italic text-monospace';
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('#postForm').after(errorMsg);
+          setTimeout(function () {
+            errorMsg.remove();
+          }, 5000);
+        },
+        rules: {
+          email: {
+            required: true,
+            email: true
+          },
+          name: {
+            required: true,
+            minlength: 2
+          },
+          country: {
+            required: true,
+            minlength: 3
+          },
+          topic: {
+            required: true,
+            minlength: 10
+          },
+          text: {
+            required: true,
+            minlength: 50
+          }
+        },
+        validClass: 'text-success',
+        errorClass: 'text-danger'
+      };
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#postForm').validate(options);
+    }
+  }]);
+
+  return Post;
+}();
 
 /***/ }),
 
@@ -315,9 +620,10 @@ var viewTemplate = __webpack_require__(/*! ../templates/view-template.handlebars
 var Render =
 /*#__PURE__*/
 function () {
-  function Render(router) {
+  function Render(checkboxService, router) {
     _classCallCheck(this, Render);
 
+    this.checkboxService = checkboxService;
     this.router = router;
   } // eslint-disable-next-line class-methods-use-this
 
@@ -375,7 +681,7 @@ function () {
           var clicked = event.target;
 
           if (clicked.classList.contains('back')) {
-            window.history.back();
+            window.history.pushState(null, null, _this2.checkboxService.getCurrentState());
 
             _this2.router.render(decodeURI(window.location.pathname));
           }
@@ -407,6 +713,74 @@ function () {
     value: function renderErrorPage() {
       window.history.pushState(null, null, '/404');
       this.router.render(decodeURI(window.location.pathname));
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "filterResult",
+    value: function filterResult(newsElems, filter) {
+      var options = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].filterOptions; // eslint-disable-next-line no-unused-vars
+
+      var newsElemsCopy = _toConsumableArray(newsElems);
+
+      var result = [];
+      var isFiltered = false;
+      this.clearCheckbox();
+      options.forEach(function (option) {
+        if (filter[option] && filter[option].length) {
+          // if not filtered
+          if (isFiltered) {
+            newsElemsCopy = result;
+            result = [];
+          }
+
+          filter[option].forEach(function (item) {
+            newsElemsCopy.forEach(function (news) {
+              if (typeof news.features[option] === 'string' && news.features[option].toLowerCase().indexOf(item) !== -1) {
+                result.push(news);
+                isFiltered = true;
+              }
+
+              if (typeof news.features[option] === 'number' && news.features[option] === Number(item)) {
+                result.push(news);
+                isFiltered = true;
+              }
+
+              _toConsumableArray(document.querySelectorAll("input[name=".concat(option, "]"))).filter(function (checkbox) {
+                return checkbox.value === item;
+              })[0].checked = true;
+            });
+          });
+        }
+      });
+      return result;
+    }
+  }, {
+    key: "renderFilterResult",
+    value: function renderFilterResult(newsElems, filter) {
+      var result = this.filterResult(newsElems, filter);
+      this.renderMainPage(result);
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "clearCheckbox",
+    value: function clearCheckbox() {
+      var checkboxes = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.checkboxes;
+      checkboxes.forEach(function (checkbox) {
+        // eslint-disable-next-line no-param-reassign
+        checkbox.checked = false;
+      });
+    }
+  }, {
+    key: "initResetCheckbox",
+    value: function initResetCheckbox() {
+      var _this3 = this;
+
+      var clearFiltersBtn = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.clearFiltersBtn;
+      clearFiltersBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        _this3.clearCheckbox();
+      });
     }
   }]);
 

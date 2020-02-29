@@ -1,15 +1,19 @@
-import json from '../db.json';
 import '../styles/style.scss';
 
 import { CONFIG } from './config';
 import { Render } from './render';
 import { Router } from './router';
+import { CheckboxService } from './checkbox-service';
+import { Post } from './post';
 
 class App {
   constructor() {
     this.news = [];
     this.router = new Router();
-    this.render = new Render(this.router);
+    this.checkboxService = new CheckboxService();
+    this.render = new Render(this.checkboxService, this.router);
+    this.checkboxService.subscribe(this.onFilterChange.bind(this));
+    this.post = new Post();
     this.init();
   }
 
@@ -24,7 +28,9 @@ class App {
       .then((data) => {
         this.news = data;
         this.render.generateAllNews(data);
+        this.post.initPost();
         this.render.initSingleNewsPage();
+        this.render.initResetCheckbox();
         this.initRouter();
         this.router.render(decodeURI(window.location.pathname));
       });
@@ -33,6 +39,12 @@ class App {
   initRouter() {
     this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
     this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
+    this.router.addRoute('filter', this.render.renderFilterResult.bind(this.render, this.news, this.checkboxService.filters));
+  }
+
+  onFilterChange(data) {
+    window.history.pushState(null, null, data);
+    this.router.render(decodeURI(window.location.pathname));
   }
 }
 

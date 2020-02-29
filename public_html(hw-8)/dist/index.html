@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <title>Homework-8</title>
-  <link rel="icon" href="./images/favicon.ico" type="image/icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/icon">
 <link href="/vendors~bundle.css" rel="stylesheet"><link href="/bundle.css" rel="stylesheet"></head>
 <body>
 <header class="container-main mx-auto mb-3">
   <nav class="navbar navbar-expand navbar-light bg-light">
-    <a class="navbar-brand ml-2 pr-4" href="https://github.com/TrekFuel/home_tasks_FE-2" target="_blank"><img src="../images/github-logo-header-image.png" alt="GitHub" title="GitHub" width="40" height="40"></a>
+    <a class="navbar-brand ml-2 pr-4" href="https://github.com/TrekFuel/home_tasks_FE-2" target="_blank"><img src="/images/github-logo-header-image.png" alt="GitHub" title="GitHub" width="40" height="40"></a>
     <div id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active pr-5">
@@ -32,7 +32,7 @@
   <!--  main page-->
   <div class="d-none" id="mainPage">
     <div class="row container-main mx-auto mt-4">
-      <div class="col" id="filtersPage">
+      <div class="col mt-3" id="filtersPage">
         <form>
           <div class="form-group">
             <div class="font-weight-bold mb-2">Категория новостей</div>
@@ -135,7 +135,7 @@
                 &#9734;
               </label>
             </div>
-            <button type="button" class="btn-sm btn-primary mt-4">Очистить
+            <button type="button" class="btn-sm btn-primary mt-4" id="clearFiltersBtn">Очистить
               фильтры
             </button>
           </div>
@@ -156,79 +156,41 @@
   </div>
   <!--  single news page-->
 
-  <!--  sign in page-->
-  <div class="sign mx-auto mt-5 mb-5 container-main w-25 d-none" id="signInPage">
-    <form>
-      <p class="font-italic">Введите Ваши данные для входа,
-        пожалуйста. Сайт
-        доступен
-        только
-        авторизованным
-        пользователям.</p>
-      <div class="form-group row">
-        <label for="inputEmailSignIn" class="col-sm-5 col-form-label">Email
-        </label>
-        <div class="col-sm-7">
-          <input type="email" class="form-control" id="inputEmailSignIn">
+  <!-- post news page -->
+  <div class="row w-50 mx-auto mt-5 mb-3" id="postNewsPage">
+    <div class="col-sm-12">
+      <form id="postForm" novalidate>
+        <h5 class="mb-5">Форма обратной связи</h5>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="emailInput">Email</label>
+            <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="nameInput">Имя</label>
+            <input type="text" class="form-control" name="name" id="nameInput" placeholder="Имя">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPasswordSignIn" class="col-sm-5 col-form-label">Пароль
-        </label>
-        <div class="col-sm-7">
-          <input type="password" class="form-control" id="inputPasswordSignIn">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="countryInput">Страна</label>
+            <input type="text" class="form-control" name="country" id="countryInput" placeholder="Страна">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="topicInput">Тема</label>
+            <input type="text" class="form-control" name="topic" id="topicInput" placeholder="Тема">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary" id="signInButton">Войти
-          </button>
+        <div class="form-group">
+          <label for="textInput">Текст новости</label>
+          <textarea class="form-control" id="textInput" name="text" placeholder="Текст новости" rows="3"></textarea>
         </div>
-      </div>
-      <p class="font-italic">Еще не зарегистрированы? Тогда нажмите
-        кнопку для регистрации, пожалуйста.</p>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" class="btn-sm btn-primary" id="goToSignUpPageButton">Регистрация
-          </button>
-        </div>
-      </div>
-    </form>
+        <button type="submit" class="btn-sm btn-primary">Отправить
+        </button>
+      </form>
+    </div>
   </div>
-  <!--  sign in page-->
-
-  <!--  sign up page-->
-  <div class="sign mx-auto mt-5 mb-5 container-main w-25 d-none" id="signUpPage">
-    <form>
-      <p class="font-italic">Введите Ваши данные для регистрации,
-        пожалуйста. Сайт
-        доступен
-        только
-        авторизованным
-        пользователям.</p>
-      <div class="form-group row">
-        <label for="inputEmailSignUp" class="col-sm-5 col-form-label">Email
-        </label>
-        <div class="col-sm-7">
-          <input type="email" class="form-control" id="inputEmailSignUp">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPasswordSignUp" class="col-sm-5 col-form-label">Пароль
-        </label>
-        <div class="col-sm-7">
-          <input type="password" class="form-control" id="inputPasswordSignUp">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary" id="signUpButton">Зарегистрироваться
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <!--  sign up page-->
+  <!-- post news page -->
 
   <!--  about page-->
   <div class="row mx-auto mt-5 mb-5 ml-5 container-main w-50 d-none" id="aboutPage">

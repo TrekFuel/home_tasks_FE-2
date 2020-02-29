@@ -5,7 +5,8 @@ const viewTemplate = require('../templates/view-template.handlebars');
 
 // eslint-disable-next-line import/prefer-default-export
 export class Render {
-  constructor(router) {
+  constructor(checkboxService, router) {
+    this.checkboxService = checkboxService;
     this.router = router;
   }
 
@@ -34,7 +35,8 @@ export class Render {
   generateAllNews(data) {
     const { allNewsPage } = CONFIG.elements;
     allNewsPage.innerHTML = previewTemplate(data);
-    const singleNewsButton = document.querySelectorAll('.single-news-btn');
+    const singleNewsButton = document
+      .querySelectorAll('.single-news-btn');
 
     singleNewsButton.forEach((button) => {
       button.addEventListener('click', (event) => {
@@ -48,17 +50,18 @@ export class Render {
 
   initSingleNewsPage() {
     this.singleNewsPage = CONFIG.elements.singleNewsPage;
-    this.singleNewsPage.addEventListener('click', (event) => {
-      event.preventDefault();
-      if (this.singleNewsPage.classList.contains(CONFIG.displayBlock)) {
-        const clicked = event.target;
+    this.singleNewsPage.addEventListener('click',
+      (event) => {
+        event.preventDefault();
+        if (this.singleNewsPage.classList.contains(CONFIG.displayBlock)) {
+          const clicked = event.target;
 
-        if (clicked.classList.contains('back')) {
-          window.history.back();
-          this.router.render(decodeURI(window.location.pathname));
+          if (clicked.classList.contains('back')) {
+            window.history.pushState(null, null, this.checkboxService.getCurrentState());
+            this.router.render(decodeURI(window.location.pathname));
+          }
         }
-      }
-    });
+      });
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -77,11 +80,74 @@ export class Render {
     }
 
     // eslint-disable-next-line no-unused-expressions
-    isFind ? singleNewsPage.classList.add(CONFIG.displayBlock) : this.renderErrorPage();
+    isFind ? singleNewsPage.classList.add(CONFIG.displayBlock)
+      : this.renderErrorPage();
   }
 
   renderErrorPage() {
     window.history.pushState(null, null, '/404');
     this.router.render(decodeURI(window.location.pathname));
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  filterResult(newsElems, filter) {
+    const options = CONFIG.filterOptions;
+    // eslint-disable-next-line no-unused-vars
+    let newsElemsCopy = [...newsElems];
+    let result = [];
+    let isFiltered = false;
+    this.clearCheckbox();
+
+    options.forEach((option) => {
+      if (filter[option] && filter[option].length) {
+        // if not filtered
+        if (isFiltered) {
+          newsElemsCopy = result;
+          result = [];
+        }
+        filter[option].forEach((item) => {
+          newsElemsCopy.forEach((news) => {
+            if (typeof news.features[option] === 'string'
+              && news.features[option].toLowerCase()
+                .indexOf(item) !== -1) {
+              result.push(news);
+              isFiltered = true;
+            }
+
+            if (typeof news.features[option] === 'number'
+              && news.features[option] === Number(item)) {
+              result.push(news);
+              isFiltered = true;
+            }
+
+            [...document.querySelectorAll(`input[name=${option}]`)]
+              .filter((checkbox) => checkbox.value === item)[0].checked = true;
+          });
+        });
+      }
+    });
+    return result;
+  }
+
+  renderFilterResult(newsElems, filter) {
+    const result = this.filterResult(newsElems, filter);
+    this.renderMainPage(result);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  clearCheckbox() {
+    const { checkboxes } = CONFIG.elements;
+    checkboxes.forEach((checkbox) => {
+      // eslint-disable-next-line no-param-reassign
+      checkbox.checked = false;
+    });
+  }
+
+  initResetCheckbox() {
+    const { clearFiltersBtn } = CONFIG.elements;
+    clearFiltersBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.clearCheckbox();
+    });
   }
 }
