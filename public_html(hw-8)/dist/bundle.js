@@ -352,7 +352,7 @@ function () {
     key: "createQueryHash",
     value: function createQueryHash() {
       if (Object.keys(this.filters).length > 0) {
-        return "filter/".concat(JSON.stringify(this.filters));
+        return "/filter/".concat(JSON.stringify(this.filters));
       }
 
       return '/';
@@ -387,7 +387,6 @@ var CONFIG = {
     filtersPage: document.getElementById('filtersPage'),
     allNewsPage: document.getElementById('allNewsPage'),
     singleNewsPage: document.getElementById('singleNewsPage'),
-    singleNews: document.querySelectorAll('.single-news'),
     aboutPage: document.getElementById('aboutPage'),
     postNewsPage: document.getElementById('postNewsPage'),
     postForm: document.getElementById('postForm'),
@@ -632,7 +631,7 @@ function () {
     key: "renderMainPage",
     value: function renderMainPage(newsElems) {
       var mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
-      var allNews = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.singleNews;
+      var allNews = document.querySelectorAll('.single-news');
 
       _toConsumableArray(allNews).forEach(function (news) {
         news.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayNone);
@@ -655,6 +654,7 @@ function () {
     value: function generateAllNews(data) {
       var _this = this;
 
+      var mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
       var allNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.allNewsPage;
       allNewsPage.innerHTML = previewTemplate(data);
       var singleNewsButton = document.querySelectorAll('.single-news-btn');
@@ -665,6 +665,8 @@ function () {
           window.history.pushState(null, null, "/news/".concat(index));
 
           _this.router.render(decodeURI(window.location.pathname));
+
+          mainPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
         });
       });
     }
@@ -727,7 +729,6 @@ function () {
       this.clearCheckbox();
       options.forEach(function (option) {
         if (filter[option] && filter[option].length) {
-          // if not filtered
           if (isFiltered) {
             newsElemsCopy = result;
             result = [];
@@ -744,11 +745,10 @@ function () {
                 result.push(news);
                 isFiltered = true;
               }
-
-              _toConsumableArray(document.querySelectorAll("input[name=".concat(option, "]"))).filter(function (checkbox) {
-                return checkbox.value === item;
-              })[0].checked = true;
             });
+            _toConsumableArray(document.querySelectorAll("input[name=".concat(option, "]"))).filter(function (checkbox) {
+              return checkbox.value === item;
+            })[0].checked = true;
           });
         }
       });
@@ -765,7 +765,8 @@ function () {
     key: "clearCheckbox",
     value: function clearCheckbox() {
       var checkboxes = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.checkboxes;
-      checkboxes.forEach(function (checkbox) {
+
+      _toConsumableArray(checkboxes).forEach(function (checkbox) {
         // eslint-disable-next-line no-param-reassign
         checkbox.checked = false;
       });
@@ -827,10 +828,12 @@ function () {
     this.routes = {
       404: function _() {
         var errorPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.errorPage;
+        var postNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.postNewsPage;
         errorPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+        postNewsPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayNone);
       }
     };
-    this.mainPage = document.querySelectorAll('#mainPage');
+    this.allNews = document.querySelectorAll('.single-news');
     window.addEventListener('popstate', function (event) {
       event.preventDefault();
 
@@ -848,8 +851,8 @@ function () {
     value: function render(url) {
       var temp = url.split('/')[1];
 
-      _toConsumableArray(this.mainPage).forEach(function (page) {
-        page.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+      _toConsumableArray(this.allNews).forEach(function (news) {
+        news.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
       }); // eslint-disable-next-line no-unused-expressions
 
 

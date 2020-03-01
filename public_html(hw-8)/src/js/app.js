@@ -37,9 +37,12 @@ class App {
   }
 
   initRouter() {
-    this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
-    this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
-    this.router.addRoute('filter', this.render.renderFilterResult.bind(this.render, this.news, this.checkboxService.filters));
+    this.router.addRoute('', this.render.renderMainPage
+      .bind(this.render, this.news));
+    this.router.addRoute('news', this.render.renderSingleNewsPage
+      .bind(this.render, this.news));
+    this.router.addRoute('filter', this.render.renderFilterResult
+      .bind(this.render, this.news, this.checkboxService.filters));
   }
 
   onFilterChange(data) {

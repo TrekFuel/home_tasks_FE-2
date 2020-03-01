@@ -9,9 +9,9 @@
         "large": "/images/news1_large.jpg"
       },
       "features": {
-        "newsCategory": "главное",
-        "newsDate": "сегодня",
-        "newsActivity": "высокая",
+        "newsCategory": "main",
+        "newsDate": "today",
+        "newsActivity": "high",
         "newsRating": 5
       }
     },
@@ -24,9 +24,9 @@
         "large": "/images/news2_large.jpg"
       },
       "features": {
-        "newsCategory": "главное",
-        "newsDate": "ранее",
-        "newsActivity": "высокая",
+        "newsCategory": "main",
+        "newsDate": "previously",
+        "newsActivity": "high",
         "newsRating": 4
       }
     },
@@ -39,9 +39,9 @@
         "large": "/images/news3_large.jpg"
       },
       "features": {
-        "newsCategory": "главное",
-        "newsDate": "ранее",
-        "newsActivity": "низкая",
+        "newsCategory": "main",
+        "newsDate": "previously",
+        "newsActivity": "low",
         "newsRating": 3
       }
     },
@@ -54,9 +54,9 @@
         "large": "/images/news4_large.jpg"
       },
       "features": {
-        "newsCategory": "главное",
-        "newsDate": "сегодня",
-        "newsActivity": "средняя",
+        "newsCategory": "main",
+        "newsDate": "today",
+        "newsActivity": "medium",
         "newsRating": 2
       }
     },
@@ -69,9 +69,9 @@
         "large": "/images/news5_large.jpg"
       },
       "features": {
-        "newsCategory": "главное",
-        "newsDate": "сегодня",
-        "newsActivity": "высокая",
+        "newsCategory": "main",
+        "newsDate": "today",
+        "newsActivity": "high",
         "newsRating": 1
       }
     },
@@ -84,9 +84,9 @@
         "large": "/images/news6_large.jpg"
       },
       "features": {
-        "newsCategory": "Россия",
-        "newsDate": "сегодня",
-        "newsActivity": "высокая",
+        "newsCategory": "russia",
+        "newsDate": "today",
+        "newsActivity": "high",
         "newsRating": 4
       }
     },
@@ -99,9 +99,9 @@
         "large": "/images/news7_large.jpg"
       },
       "features": {
-        "newsCategory": "Россия",
-        "newsDate": "ранее",
-        "newsActivity": "высокая",
+        "newsCategory": "russia",
+        "newsDate": "previously",
+        "newsActivity": "high",
         "newsRating": 3
       }
     },
@@ -114,9 +114,9 @@
         "large": "/images/news8_large.jpg"
       },
       "features": {
-        "newsCategory": "мир",
-        "newsDate": "сегодня",
-        "newsActivity": "средняя",
+        "newsCategory": "world",
+        "newsDate": "today",
+        "newsActivity": "medium",
         "newsRating": 3
       }
     },
@@ -129,9 +129,9 @@
         "large": "/images/news9_large.jpg"
       },
       "features": {
-        "newsCategory": "мир",
-        "newsDate": "ранее",
-        "newsActivity": "низкая",
+        "newsCategory": "world",
+        "newsDate": "previously",
+        "newsActivity": "low",
         "newsRating": 2
       }
     },
@@ -144,9 +144,9 @@
         "large": "/images/news10_large.jpg"
       },
       "features": {
-        "newsCategory": "экономика",
-        "newsDate": "ранее",
-        "newsActivity": "высокая",
+        "newsCategory": "economics",
+        "newsDate": "previously",
+        "newsActivity": "high",
         "newsRating": 5
       }
     },
@@ -159,9 +159,9 @@
         "large": "/images/news11_large.jpg"
       },
       "features": {
-        "newsCategory": "экономика",
-        "newsDate": "ранее",
-        "newsActivity": "средняя",
+        "newsCategory": "economics",
+        "newsDate": "previously",
+        "newsActivity": "medium",
         "newsRating": 4
       }
     },
@@ -174,9 +174,9 @@
         "large": "/images/news12_large.jpg"
       },
       "features": {
-        "newsCategory": "спорт",
-        "newsDate": "сегодня",
-        "newsActivity": "высокая",
+        "newsCategory": "sport",
+        "newsDate": "today",
+        "newsActivity": "high",
         "newsRating": 5
       }
     },
@@ -189,9 +189,9 @@
         "large": "/images/news13_large.jpg"
       },
       "features": {
-        "newsCategory": "спорт",
-        "newsDate": "сегодня",
-        "newsActivity": "средняя",
+        "newsCategory": "sport",
+        "newsDate": "today",
+        "newsActivity": "medium",
         "newsRating": 4
       }
     },
@@ -204,9 +204,9 @@
         "large": "/images/news14_large.jpg"
       },
       "features": {
-        "newsCategory": "путешествия",
-        "newsDate": "ранее",
-        "newsActivity": "средняя",
+        "newsCategory": "journeys",
+        "newsDate": "previously",
+        "newsActivity": "medium",
         "newsRating": 3
       }
     },
@@ -219,9 +219,9 @@
         "large": "/images/news15_large.jpg"
       },
       "features": {
-        "newsCategory": "путешествия",
-        "newsDate": "ранее",
-        "newsActivity": "низкая",
+        "newsCategory": "journeys",
+        "newsDate": "previously",
+        "newsActivity": "low",
         "newsRating": 1
       }
     }

@@ -22,14 +22,7 @@ body {
   max-width: 75rem; }
 
 .container-main {
-  max-width: 1300px;
-  border: black solid 0.05rem; }
-
-header {
-  border: none !important; }
-
-footer {
-  border: none !important; }
+  max-width: 1300px; }
 
 .container-columns {
   max-width: 1000px; }
@@ -39,9 +32,6 @@ footer {
 
 #allNewsPage p {
   font-size: 0.95rem; }
-
-#singleNewsPage {
-  border: none !important; }
 
 #singleNewsPage p {
   font-size: 0.95rem; }

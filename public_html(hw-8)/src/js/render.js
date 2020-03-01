@@ -13,7 +13,7 @@ export class Render {
   // eslint-disable-next-line class-methods-use-this
   renderMainPage(newsElems) {
     const { mainPage } = CONFIG.elements;
-    const allNews = CONFIG.elements.singleNews;
+    const allNews = document.querySelectorAll('.single-news');
 
     [...allNews].forEach((news) => {
       news.classList.add(CONFIG.displayNone);
@@ -33,6 +33,7 @@ export class Render {
 
   // eslint-disable-next-line class-methods-use-this
   generateAllNews(data) {
+    const { mainPage } = CONFIG.elements;
     const { allNewsPage } = CONFIG.elements;
     allNewsPage.innerHTML = previewTemplate(data);
     const singleNewsButton = document
@@ -44,6 +45,7 @@ export class Render {
         const { index } = button.dataset;
         window.history.pushState(null, null, `/news/${index}`);
         this.router.render(decodeURI(window.location.pathname));
+        mainPage.classList.remove(CONFIG.displayBlock);
       });
     });
   }
@@ -100,7 +102,6 @@ export class Render {
 
     options.forEach((option) => {
       if (filter[option] && filter[option].length) {
-        // if not filtered
         if (isFiltered) {
           newsElemsCopy = result;
           result = [];
@@ -119,10 +120,9 @@ export class Render {
               result.push(news);
               isFiltered = true;
             }
-
-            [...document.querySelectorAll(`input[name=${option}]`)]
-              .filter((checkbox) => checkbox.value === item)[0].checked = true;
           });
+          [...document.querySelectorAll(`input[name=${option}]`)]
+            .filter((checkbox) => checkbox.value === item)[0].checked = true;
         });
       }
     });
@@ -137,7 +137,7 @@ export class Render {
   // eslint-disable-next-line class-methods-use-this
   clearCheckbox() {
     const { checkboxes } = CONFIG.elements;
-    checkboxes.forEach((checkbox) => {
+    [...checkboxes].forEach((checkbox) => {
       // eslint-disable-next-line no-param-reassign
       checkbox.checked = false;
     });

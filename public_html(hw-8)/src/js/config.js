@@ -6,7 +6,6 @@ export const CONFIG = {
     filtersPage: document.getElementById('filtersPage'),
     allNewsPage: document.getElementById('allNewsPage'),
     singleNewsPage: document.getElementById('singleNewsPage'),
-    singleNews: document.querySelectorAll('.single-news'),
     aboutPage: document.getElementById('aboutPage'),
     postNewsPage: document.getElementById('postNewsPage'),
     postForm: document.getElementById('postForm'),

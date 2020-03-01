@@ -6,11 +6,13 @@ export class Router {
     this.routes = {
       404: () => {
         const { errorPage } = CONFIG.elements;
+        const { postNewsPage } = CONFIG.elements;
         errorPage.classList.add(CONFIG.displayBlock);
+        postNewsPage.classList.add(CONFIG.displayNone);
       },
     };
 
-    this.mainPage = document.querySelectorAll('#mainPage');
+    this.allNews = document.querySelectorAll('.single-news');
 
     window.addEventListener('popstate', (event) => {
       event.preventDefault();
@@ -25,8 +27,8 @@ export class Router {
   render(url) {
     const temp = url.split('/')[1];
 
-    [...this.mainPage].forEach((page) => {
-      page.classList.remove(CONFIG.displayBlock);
+    [...this.allNews].forEach((news) => {
+      news.classList.remove(CONFIG.displayBlock);
     });
 
     // eslint-disable-next-line no-unused-expressions

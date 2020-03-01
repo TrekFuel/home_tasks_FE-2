@@ -48,7 +48,7 @@ export class CheckboxService {
         const index = this.filters[specName].indexOf(target.value);
         this.filters[specName].splice(index, 1);
       }
-      if (!(this.filters[specName].length)) {
+      if (!this.filters[specName].length) {
         delete this.filters[specName];
       }
     }
@@ -69,7 +69,7 @@ export class CheckboxService {
 
   createQueryHash() {
     if (Object.keys(this.filters).length > 0) {
-      return `filter/${JSON.stringify(this.filters)}`;
+      return `/filter/${JSON.stringify(this.filters)}`;
     }
     return '/';
   }
