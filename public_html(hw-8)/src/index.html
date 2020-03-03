@@ -18,10 +18,6 @@
     <div id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active pr-5">
-          <button type="button" class="btn about-btn" id="backButton">На главную
-          </button>
-        </li>
-        <li class="nav-item active pr-5">
           <button type="button" class="btn about-btn" id="aboutButton">О
             нас
           </button>
@@ -259,29 +255,35 @@
   <div class="row mx-auto mt-5 mb-5 ml-5 container-main w-50 d-none"
        id="aboutPage">
     <div class="col">
+      <img
+          src="/images/spa-logo.jpg"
+          alt="spa-logo" title="spa-logo"
+          width="800" height="500" class="mb-5"/>
       <p>Данный сайт новостей является Single Page Application, написанным
         на нативном JavaScript, без использования фреймворков. При этом
         содержит следующий функционал:</p>
       <ul>
-        <li>страница входа;</li>
-        <li>страница регистрации;</li>
-        <li>страница новостей (главная (общая для всех новостей), с
-          превью (списком) всех новостей);
+        <li>страница новостей (главная - общая для всех новостей, с
+          превью - списком всех новостей);
         </li>
-        <li>страница новости с id (подробная страница отдельной (одной)
-          новости);
+        <li>страница новости по id (подробная страница отдельной новости);
         </li>
-        <li>страница about (about App);</li>
-        <li>search фильтрация новостей по заголовку (по списку
-          параметров (чекбоксы)).
+        <li>страница about;</li>
+        <li>фильтрация новостей по списку параметров (чекбоксы);
+        </li>
+        <li>отправка формы с валидацией на сервер
         </li>
       </ul>
+      <button type="button"
+              class="btn-primary btn-sm ml-3 mb-3 container-button back">
+        На главную
+      </button>
     </div>
   </div>
   <!--  about page-->
 
   <!--  error page-->
-  <div class="row mx-auto container-main w-50 d-none" id="errorPage">
+  <div class="row mx-auto container-main w-50 d-none mt-5 mb-5" id="errorPage">
     <div class="col">
       <div class="alert alert-danger text-center" role="alert">
         <p>404, не найдено</p>

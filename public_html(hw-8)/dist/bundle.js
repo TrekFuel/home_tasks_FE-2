@@ -220,6 +220,8 @@ function () {
 
         _this.render.initSingleNewsPage();
 
+        _this.render.initAboutPage();
+
         _this.render.initResetCheckbox();
 
         _this.initRouter();
@@ -232,6 +234,7 @@ function () {
     value: function initRouter() {
       this.router.addRoute('', this.render.renderMainPage.bind(this.render, this.news));
       this.router.addRoute('news', this.render.renderSingleNewsPage.bind(this.render, this.news));
+      this.router.addRoute('about', this.render.renderAboutPage.bind(this.render, this.news));
       this.router.addRoute('filter', this.render.renderFilterResult.bind(this.render, this.news, this.checkboxService.filters));
     }
   }, {
@@ -718,6 +721,57 @@ function () {
     } // eslint-disable-next-line class-methods-use-this
 
   }, {
+    key: "resetStartPage",
+    value: function resetStartPage() {
+      var mainPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.mainPage;
+      var postNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.postNewsPage;
+      mainPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+      postNewsPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayNone);
+    }
+  }, {
+    key: "initAboutPage",
+    value: function initAboutPage() {
+      var _this3 = this;
+
+      var aboutButton = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.aboutButton;
+      var aboutPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.aboutPage;
+      aboutButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.history.pushState(null, null, '/about');
+
+        _this3.router.render(decodeURI(window.location.pathname));
+
+        _this3.resetStartPage();
+
+        aboutPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+      });
+    }
+  }, {
+    key: "renderAboutPage",
+    value: function renderAboutPage() {
+      var _this4 = this;
+
+      var aboutPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.aboutPage;
+      var postNewsPage = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.postNewsPage;
+      postNewsPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayNone);
+      aboutPage.classList.add(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+      aboutPage.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (aboutPage.classList.contains(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock)) {
+          var clicked = event.target;
+
+          if (clicked.classList.contains('back')) {
+            aboutPage.classList.remove(_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].displayBlock);
+            window.history.pushState(null, null, _this4.checkboxService.getCurrentState());
+
+            _this4.router.render(decodeURI(window.location.pathname));
+          }
+        }
+      });
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
     key: "filterResult",
     value: function filterResult(newsElems, filter) {
       var options = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].filterOptions; // eslint-disable-next-line no-unused-vars
@@ -774,13 +828,13 @@ function () {
   }, {
     key: "initResetCheckbox",
     value: function initResetCheckbox() {
-      var _this3 = this;
+      var _this5 = this;
 
       var clearFiltersBtn = _config__WEBPACK_IMPORTED_MODULE_0__["CONFIG"].elements.clearFiltersBtn;
       clearFiltersBtn.addEventListener('click', function (event) {
         event.preventDefault();
 
-        _this3.clearCheckbox();
+        _this5.clearCheckbox();
       });
     }
   }]);
@@ -899,7 +953,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":2,"column":58},"end":{"line":2,"column":64}}}) : helper)))
     + "\">\n    <div class=\"card\">\n      <img src=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"image") : depth0)) != null ? lookupProperty(stack1,"small") : stack1), depth0))
-    + "\"\n           class=\"rounded mx-auto d-block mt-3\"\n           width=\"235\"\n           height=\"160\"\n           alt=\""
+    + "\"\n           class=\"rounded mx-auto d-block mt-3\"\n           width=\"180\"\n           height=\"120\"\n           alt=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":8,"column":16},"end":{"line":8,"column":25}}}) : helper)))
     + "\"\n           title=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":9,"column":18},"end":{"line":9,"column":27}}}) : helper)))

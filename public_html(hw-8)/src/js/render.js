@@ -92,6 +92,50 @@ export class Render {
   }
 
   // eslint-disable-next-line class-methods-use-this
+  resetStartPage() {
+    const { mainPage } = CONFIG.elements;
+    const { postNewsPage } = CONFIG.elements;
+
+    mainPage.classList.remove(CONFIG.displayBlock);
+    postNewsPage.classList.add(CONFIG.displayNone);
+  }
+
+  initAboutPage() {
+    const { aboutButton } = CONFIG.elements;
+    const { aboutPage } = CONFIG.elements;
+
+    aboutButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.history.pushState(null, null, '/about');
+      this.router.render(decodeURI(window.location.pathname));
+      this.resetStartPage();
+      aboutPage.classList.add(CONFIG.displayBlock);
+    });
+  }
+
+  renderAboutPage() {
+    const { aboutPage } = CONFIG.elements;
+    const { postNewsPage } = CONFIG.elements;
+
+    postNewsPage.classList.add(CONFIG.displayNone);
+    aboutPage.classList.add(CONFIG.displayBlock);
+
+    aboutPage.addEventListener('click',
+      (event) => {
+        event.preventDefault();
+        if (aboutPage.classList.contains(CONFIG.displayBlock)) {
+          const clicked = event.target;
+
+          if (clicked.classList.contains('back')) {
+            aboutPage.classList.remove(CONFIG.displayBlock);
+            window.history.pushState(null, null, this.checkboxService.getCurrentState());
+            this.router.render(decodeURI(window.location.pathname));
+          }
+        }
+      });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
   filterResult(newsElems, filter) {
     const options = CONFIG.filterOptions;
     // eslint-disable-next-line no-unused-vars

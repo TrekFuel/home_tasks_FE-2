@@ -30,6 +30,7 @@ class App {
         this.render.generateAllNews(data);
         this.post.initPost();
         this.render.initSingleNewsPage();
+        this.render.initAboutPage();
         this.render.initResetCheckbox();
         this.initRouter();
         this.router.render(decodeURI(window.location.pathname));
@@ -40,6 +41,8 @@ class App {
     this.router.addRoute('', this.render.renderMainPage
       .bind(this.render, this.news));
     this.router.addRoute('news', this.render.renderSingleNewsPage
+      .bind(this.render, this.news));
+    this.router.addRoute('about', this.render.renderAboutPage
       .bind(this.render, this.news));
     this.router.addRoute('filter', this.render.renderFilterResult
       .bind(this.render, this.news, this.checkboxService.filters));
