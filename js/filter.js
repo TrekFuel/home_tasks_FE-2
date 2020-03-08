@@ -2,7 +2,8 @@
 
 function wordsFilter(wordsList) {
   const wordsArray = wordsList.split(' ');
-  const filteredWordsArray = wordsArray.filter((word) => word !== 'Audi' && word !== 'Mercedes-Benz' && word !== 'Mercedes' && word !== 'Porsche');
+  const bannedWords = ['Audi', 'Mercedes-Benz', 'Mercedes', 'Porsche'];
+  const filteredWordsArray = wordsArray.filter((word) => !bannedWords.includes(word));
   const result = filteredWordsArray.join(', ');
   // eslint-disable-next-line no-console
   console.log(result);

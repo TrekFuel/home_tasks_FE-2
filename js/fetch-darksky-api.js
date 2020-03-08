@@ -7,6 +7,15 @@ function getGrodnoForecast() {
     const key = '9ac094ddbff4dcbaf603076dfbe3874c';
     const params = '53.683802,23.833985,2020-02-05T15:00:00?lang=ru&units=si';
 
+  fetch(`${proxy}/${API}/${key}/${params}`, {
+    method: 'GET',
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      // eslint-disable-next-line no-undef
+      const unixDate = moment.unix(response.currently.time);
+      const humanDate = unixDate.locale('ru').format('MMMM Do YYYY, h:mm:ss a');
+
     fetch(`${proxy}/${API}/${key}/${params}`, {
         method: 'GET',
     })
