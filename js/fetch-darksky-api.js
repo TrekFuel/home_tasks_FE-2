@@ -16,7 +16,16 @@ function getGrodnoForecast() {
       const unixDate = moment.unix(response.currently.time);
       const humanDate = unixDate.locale('ru').format('MMMM Do YYYY, h:mm:ss a');
 
-      renderElement.innerHTML = `<div class="col-12">
+    fetch(`${proxy}/${API}/${key}/${params}`, {
+        method: 'GET',
+    })
+        .then((response) => response.json())
+        .then((response) => {
+            // eslint-disable-next-line no-undef
+            const unixDate = moment.unix(response.currently.time);
+            const humanDate = unixDate.locale('ru').format('MMMM Do YYYY, h:mm:ss a');
+
+            renderElement.innerHTML = `<div class="col-12">
   Дата: ${humanDate}
 </div>
     <div class="col-12">
@@ -40,11 +49,11 @@ function getGrodnoForecast() {
     <div class="col-12">
       Видимость: ${response.currently.visibility}
     </div>`;
-      renderElement.classList.add('d-block');
-    });
+            renderElement.classList.add('d-block');
+        });
 }
 
 getButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  getGrodnoForecast();
+    event.preventDefault();
+    getGrodnoForecast();
 });

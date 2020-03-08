@@ -1,0 +1,29 @@
+{
+  "name": "test-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass src/style.scss -o dist",
+    "css:prod": "node-sass src/style.scss -o dist --output-style compressed",
+    "css:watch": "npm run css && node-sass src/style.scss -wo dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/http-server ./public_html -a localhost -p 8082 -c-1",
+    "start-json1": "./node_modules/.bin/json-server --watch db.json --port 3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "http-server": "^0.12.1",
+    "json-server": "^0.15.1"
+  }
+}
